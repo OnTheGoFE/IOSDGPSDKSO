@@ -1,0 +1,1873 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name DIGIPROSDKSO
+import DIGIPROSDK
+@_exported import DIGIPROSDKSO
+import Eureka
+import Foundation
+import Swift
+import UIKit
+import WebKit
+@_inheritsConvenienceInitializers open class ComboDinamicoCell : Eureka.Cell<Swift.String>, Eureka.CellType, DIGIPROSDK.APIDelegate {
+  @objc public func sendStatus(message: Swift.String, error: DIGIPROSDK.enumErrorType, isLog: Swift.Bool, isNotification: Swift.Bool)
+  @objc public func sendStatusCompletition(initial: Swift.Float, current: Swift.Float, final: Swift.Float)
+  @objc public func sendStatusCodeMessage(message: Swift.String, error: DIGIPROSDK.enumErrorType)
+  @objc public func didSendError(message: Swift.String, error: DIGIPROSDK.enumErrorType)
+  @objc public func didSendResponse(message: Swift.String, error: DIGIPROSDK.enumErrorType)
+  @objc public func didSendResponseHUD(message: Swift.String, error: DIGIPROSDK.enumErrorType, porcentage: Swift.Int)
+  public var elemento: DIGIPROSDK.Elemento
+  public var atributos: DIGIPROSDK.Atributos_comboDinamico?
+  public var formDelegate: DIGIPROSDK.FormularioDelegate?
+  public var rulesOnProperties: [(xml: DIGIPROSDK.AEXMLElement, vrb: Swift.String)]
+  public var rulesOnChange: [DIGIPROSDK.AEXMLElement]
+  public var rulesOnAction: [DIGIPROSDK.AEXMLElement]
+  public var datosCatalogo: DIGIPROSDK.FECatRemotoData?
+  public var genericRow: DIGIPROSDKSO.ComboDinamicoRow! {
+    get
+  }
+  public var isInfoToolTipVisible: Swift.Bool
+  public var toolTip: DIGIPROSDK.EasyTipView?
+  public var est: DIGIPROSDK.FEEstadistica?
+  public var gralButton: DIGIPROSDK.DLRadioButton
+  public func setObject(obj: DIGIPROSDK.Elemento)
+  public func guardarValor(desc: Swift.String, id: Swift.String)
+  public func selectItem(valor: Swift.String, valormetadato: Swift.String)
+  public func reloadCheck(lista: [Swift.String])
+  public func queryValue(isRobot: Swift.Bool = false)
+  public func settingValuesCombo(isRobot: Swift.Bool = false)
+  override open func update()
+  @objc required dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  override open func setup()
+  @objc public func setAyuda(_ sender: Any)
+  override open func didSelect()
+  @objc @IBAction public func selectedButton(radioButton: DIGIPROSDK.DLRadioButton)
+  @objc deinit
+}
+extension ComboDinamicoCell : DIGIPROSDK.ObjectFormDelegate {
+  public func setEstadistica()
+  public func setTextStyle(_ style: Swift.String)
+  public func setDecoration(_ decor: Swift.String)
+  public func setAlignment(_ align: Swift.String)
+  public func setVariableHeight(Height h: CoreGraphics.CGFloat)
+  public func setTitleText(_ text: Swift.String)
+  public func setSubtitleText(_ text: Swift.String)
+  public func setHeightFromTitles()
+  public func setPlaceholder(_ text: Swift.String)
+  public func setInfo()
+  public func setTypeList(_ typeList: Swift.String)
+  public func toogleToolTip(_ help: Swift.String)
+  public func setMessage(_ string: Swift.String, _ state: DIGIPROSDK.enumErrorType)
+  public func initRules()
+  public func setMinMax()
+  public func setExpresionRegular()
+  public func setOcultarTitulo(_ bool: Swift.Bool)
+  public func setOcultarSubtitulo(_ bool: Swift.Bool)
+  public func setHabilitado(_ bool: Swift.Bool)
+  public func setEdited(v: Swift.String)
+  public func setEdited(v: Swift.String, isRobot: Swift.Bool)
+  public func setVisible(_ bool: Swift.Bool)
+  public func resetValidation()
+  public func setDefaultValue()
+  public func setRequerido(_ bool: Swift.Bool)
+  public func updateIfIsValid(isDefault: Swift.Bool = false)
+  public func setMode(_ modeTable: Swift.Bool)
+  public func triggerEvent(_ action: Swift.String)
+  public func setRulesOnProperties()
+  public func triggerRulesOnProperties(_ action: Swift.String)
+  public func setRulesOnChange()
+  public func triggerRulesOnChange(_ action: Swift.String?)
+  public func triggerRulesOnAction(_ action: Swift.String?)
+  public func setMathematics(_ bool: Swift.Bool, _ id: Swift.String)
+}
+extension ComboDinamicoCell {
+  public func getMessageText() -> Swift.String
+  public func getRowEnabled() -> Swift.Bool
+  public func getRequired() -> Swift.Bool
+  public func getTitleLabel() -> Swift.String
+  public func getSubtitleLabel() -> Swift.String
+  public func getTxtInput() -> Swift.String
+}
+@_inheritsConvenienceInitializers public class TextoAreaCell : Eureka.Cell<Swift.String>, Eureka.CellType, UIKit.UITextViewDelegate {
+  public var formDelegate: DIGIPROSDK.FormularioDelegate?
+  public var rulesOnProperties: [(xml: DIGIPROSDK.AEXMLElement, vrb: Swift.String)]
+  public var rulesOnChange: [DIGIPROSDK.AEXMLElement]
+  public var atributos: DIGIPROSDK.Atributos_textarea?
+  public var elemento: DIGIPROSDK.Elemento
+  public func setObject(obj: DIGIPROSDK.Elemento)
+  override open func update()
+  @objc required dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  override open func setup()
+  @objc public func setAyuda(_ sender: Any)
+  override open func didSelect()
+  @objc open func textViewDidBeginEditing(_ textView: UIKit.UITextView)
+  @objc open func textViewDidEndEditing(_ textView: UIKit.UITextView)
+  open func textViewShouldReturn(_ textView: UIKit.UITextField) -> Swift.Bool
+  open func textView(_ textView: UIKit.UITextView, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
+  @objc open func textViewShouldBeginEditing(_ textView: UIKit.UITextView) -> Swift.Bool
+  open func textViewShouldClear(_ textView: UIKit.UITextView) -> Swift.Bool
+  @objc open func textViewShouldEndEditing(_ textView: UIKit.UITextView) -> Swift.Bool
+  @objc open func textViewDidChange(_ textView: UIKit.UITextView)
+  override open func cellCanBecomeFirstResponder() -> Swift.Bool
+  override open func cellBecomeFirstResponder(withDirection: Eureka.Direction) -> Swift.Bool
+  override open func cellResignFirstResponder() -> Swift.Bool
+  @objc deinit
+}
+extension TextoAreaCell : DIGIPROSDK.ObjectFormDelegate {
+  open func setEstadistica()
+  public func setTextStyle(_ style: Swift.String)
+  public func setDecoration(_ decor: Swift.String)
+  public func setAlignment(_ align: Swift.String)
+  public func setVariableHeight(Height h: CoreGraphics.CGFloat)
+  public func setTitleText(_ text: Swift.String)
+  public func setSubtitleText(_ text: Swift.String)
+  public func setHeightFromTitles()
+  public func setPlaceholder(_ text: Swift.String)
+  public func setInfo()
+  public func toogleToolTip(_ help: Swift.String)
+  public func setMessage(_ string: Swift.String, _ state: DIGIPROSDK.enumErrorType)
+  public func initRules()
+  public func setMinMax()
+  public func setExpresionRegular()
+  public func setOcultarTitulo(_ bool: Swift.Bool)
+  public func setOcultarSubtitulo(_ bool: Swift.Bool)
+  public func setHabilitado(_ bool: Swift.Bool)
+  public func setEdited(v: Swift.String)
+  public func setEdited(v: Swift.String, isRobot: Swift.Bool)
+  public func setVisible(_ bool: Swift.Bool)
+  public func resetValidation()
+  public func setHeightTextField()
+  public func setRequerido(_ bool: Swift.Bool)
+  public func updateIfIsValid(isDefault: Swift.Bool = false)
+  public func triggerEvent(_ action: Swift.String)
+  public func setRulesOnProperties()
+  public func triggerRulesOnProperties(_ action: Swift.String)
+  public func setRulesOnChange()
+  public func triggerRulesOnChange(_ action: Swift.String?)
+  public func setMathematics(_ bool: Swift.Bool, _ id: Swift.String)
+}
+extension TextoAreaCell {
+  public func getMessageText() -> Swift.String
+  public func getRowEnabled() -> Swift.Bool
+  public func getRequired() -> Swift.Bool
+  public func getTitleLabel() -> Swift.String
+  public func getSubtitleLabel() -> Swift.String
+}
+@_inheritsConvenienceInitializers public class _NumeroRow : Eureka.Row<DIGIPROSDKSO.NumeroCell>, Eureka.KeyboardReturnHandler {
+  open var keyboardReturnType: Eureka.KeyboardReturnTypeConfiguration?
+  required public init(tag: Swift.String?)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers final public class NumeroRow : DIGIPROSDKSO._NumeroRow, Eureka.RowType {
+  @objc deinit
+  required public init(tag: Swift.String?)
+}
+@objc @_inheritsConvenienceInitializers public class MarcadoDocumentoViewController : Eureka.FormViewController, Eureka.TypedRowControllerType, UIKit.UINavigationControllerDelegate, UIKit.UISearchBarDelegate {
+  public var row: Eureka.RowOf<Swift.String>!
+  public var onDismissCallback: ((UIKit.UIViewController) -> ())?
+  public var atributos: DIGIPROSDK.Atributos_marcadodocumentos?
+  @objc @IBAction public func cerrarAction(_ sender: Any)
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewDidLayoutSubviews()
+  public func initForm(_ form: Eureka.Form)
+  @objc override dynamic public func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreGraphics.CGFloat
+  @objc override dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+  @objc public func searchBarSearchButtonClicked(_ searchBar: UIKit.UISearchBar)
+  @objc deinit
+  override public init(style: UIKit.UITableView.Style)
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  public typealias RowValue = Swift.String
+}
+@_inheritsConvenienceInitializers public class WizardCell : Eureka.Cell<Swift.String>, Eureka.CellType {
+  @objc @IBOutlet weak public var regresarBtnFooter: UIKit.UIButton!
+  @objc @IBOutlet weak public var avanzarBtnFooter: UIKit.UIButton!
+  @objc @IBOutlet weak public var finalizarBtnFooter: UIKit.UIButton!
+  public var formDelegate: DIGIPROSDK.FormularioDelegate?
+  public var rulesOnProperties: [(xml: DIGIPROSDK.AEXMLElement, vrb: Swift.String)]
+  public var rulesOnChange: [DIGIPROSDK.AEXMLElement]
+  public var elemento: DIGIPROSDK.Elemento
+  public var atributos: DIGIPROSDK.Atributos_wizard?
+  public var genericRow: DIGIPROSDKSO.WizardRow! {
+    get
+  }
+  public var isInfoToolTipVisible: Swift.Bool
+  public var toolTip: DIGIPROSDK.EasyTipView?
+  public var est: DIGIPROSDK.FEEstadistica?
+  public var hL: CoreGraphics.CGFloat
+  public var hC: CoreGraphics.CGFloat
+  public var hR: CoreGraphics.CGFloat
+  @objc @IBAction public func regresarBtnAction(_ sender: UIKit.UIButton)
+  @objc @IBAction public func avanzarBtnAction(_ sender: UIKit.UIButton)
+  @objc @IBAction public func finalizarBtnAction(_ sender: UIKit.UIButton)
+  public func setObject(obj: DIGIPROSDK.Elemento)
+  public func putHorizontalWizardButtons()
+  public func putHorizontalButtonsWithoutStack()
+  public func setFooterOption(obj: DIGIPROSDK.Elemento)
+  override open func update()
+  @objc required dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  override open func setup()
+  @objc public func setAyuda(_ sender: Any)
+  override open func didSelect()
+  public func getPaginaNavigation(direction: Swift.Bool) -> Swift.String?
+  public func refreshNavigation()
+  public func setColors()
+  @objc deinit
+}
+extension WizardCell : DIGIPROSDK.ObjectFormDelegate {
+  public func setEstadistica()
+  public func setTextStyle(_ style: Swift.String)
+  public func setDecoration(_ decor: Swift.String)
+  public func setAlignment(_ align: Swift.String)
+  public func setWidth(_ width: Swift.String)
+  public func setVariableHeight(Height h: CoreGraphics.CGFloat)
+  public func setHeightFromTitles()
+  public func setTitleText(_ text: Swift.String)
+  public func setSubtitleText(_ text: Swift.String)
+  public func setPlaceholder(_ text: Swift.String)
+  public func setInfo()
+  public func toogleToolTip(_ help: Swift.String)
+  public func setMessage(_ string: Swift.String, _ state: DIGIPROSDK.enumErrorType)
+  public func initRules()
+  public func setMinMax()
+  public func setExpresionRegular()
+  public func setOcultarTitulo(_ bool: Swift.Bool)
+  public func setOcultarSubtitulo(_ bool: Swift.Bool)
+  public func setHabilitado(_ bool: Swift.Bool)
+  public func setEdited(v: Swift.String)
+  public func setEdited(v: Swift.String, isRobot: Swift.Bool)
+  public func setVisible(_ bool: Swift.Bool)
+  public func resetValidation()
+  public func setRequerido(_ bool: Swift.Bool)
+  public func updateIfIsValid(isDefault: Swift.Bool = false)
+  public func triggerEvent(_ action: Swift.String)
+  public func setRulesOnProperties()
+  public func triggerRulesOnProperties(_ action: Swift.String)
+  public func setRulesOnChange()
+  public func triggerRulesOnChange(_ action: Swift.String?)
+  public func setMathematics(_ bool: Swift.Bool, _ id: Swift.String)
+}
+extension WizardCell {
+  public func getMessageText() -> Swift.String
+  public func getRowEnabled() -> Swift.Bool
+  public func getRequired() -> Swift.Bool
+  public func getTitleLabel() -> Swift.String
+  public func getRegresarLabel() -> Swift.String
+  public func getAvanzarLabel() -> Swift.String
+  public func getFinalizarLabel() -> Swift.String
+  public func getSubtitleLabel() -> Swift.String
+  public func executeForward()
+  public func executeBackward()
+  public func executeFinish()
+}
+@_inheritsConvenienceInitializers open class ListaCell : Eureka.Cell<Swift.String>, Eureka.CellType {
+  public var formDelegate: DIGIPROSDK.FormularioDelegate?
+  public var rulesOnProperties: [(xml: DIGIPROSDK.AEXMLElement, vrb: Swift.String)]
+  public var rulesOnChange: [DIGIPROSDK.AEXMLElement]
+  public var rulesOnAction: [DIGIPROSDK.AEXMLElement]
+  public var catOptionCheck: [DIGIPROSDK.FEItemCatalogo]
+  public var gralButton: DIGIPROSDK.DLRadioButton
+  public var elemento: DIGIPROSDK.Elemento
+  public var atributos: DIGIPROSDK.Atributos_lista?
+  public var genericRow: DIGIPROSDKSO.ListaRow! {
+    get
+  }
+  public var isInfoToolTipVisible: Swift.Bool
+  public var toolTip: DIGIPROSDK.EasyTipView?
+  public var est: DIGIPROSDK.FEEstadistica?
+  public func setObject(obj: DIGIPROSDK.Elemento)
+  public func settingValues(_ dictValues: [Swift.String : (docid: Swift.String, valor: Swift.String, valormetadato: Swift.String, tipodoc: Swift.String, metadatostipodoc: Swift.String)])
+  override open func update()
+  @objc required dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  override open func setup()
+  @objc public func setAyuda(_ sender: Any)
+  override open func didSelect()
+  @objc @IBAction public func selectedButton(radioButton: DIGIPROSDK.DLRadioButton, isRobot: Swift.Bool)
+  @objc deinit
+}
+extension ListaCell : DIGIPROSDK.ObjectFormDelegate {
+  public func setEstadistica()
+  public func setTextStyle(_ style: Swift.String)
+  public func setDecoration(_ decor: Swift.String)
+  public func setAlignment(_ align: Swift.String)
+  public func setVariableHeight(Height h: CoreGraphics.CGFloat)
+  public func setTitleText(_ text: Swift.String)
+  public func setSubtitleText(_ text: Swift.String)
+  public func setHeightFromTitles()
+  public func setPlaceholder(_ text: Swift.String)
+  public func setInfo()
+  public func toogleToolTip(_ help: Swift.String)
+  public func setMessage(_ string: Swift.String, _ state: DIGIPROSDK.enumErrorType)
+  public func initRules()
+  public func setMinMax()
+  public func setExpresionRegular()
+  public func setOcultarTitulo(_ bool: Swift.Bool)
+  public func setOcultarSubtitulo(_ bool: Swift.Bool)
+  public func setHabilitado(_ bool: Swift.Bool)
+  public func setEdited(v: Swift.String)
+  public func setEdited(v: Swift.String, isRobot: Swift.Bool = false)
+  public func setVisible(_ bool: Swift.Bool)
+  public func resetValidation()
+  public func setDefaultValue()
+  public func setRequerido(_ bool: Swift.Bool)
+  public func updateIfIsValid(isDefault: Swift.Bool = false)
+  public func setTypeList(_ typeList: Swift.String)
+  public func reloadCheck()
+  public func triggerEvent(_ action: Swift.String)
+  public func setRulesOnProperties()
+  public func triggerRulesOnProperties(_ action: Swift.String)
+  public func setRulesOnChange()
+  public func triggerRulesOnChange(_ action: Swift.String?)
+  public func triggerRulesOnAction(_ action: Swift.String?)
+  public func setMathematics(_ bool: Swift.Bool, _ id: Swift.String)
+}
+extension ListaCell {
+  public func getMessageText() -> Swift.String
+  public func getRowEnabled() -> Swift.Bool
+  public func getRequired() -> Swift.Bool
+  public func getTitleLabel() -> Swift.String
+  public func getSubtitleLabel() -> Swift.String
+  public func getTxtInput() -> Swift.String
+}
+@_inheritsConvenienceInitializers open class _ComboDinamicoRowOf<T> : Eureka.Row<DIGIPROSDKSO.ComboDinamicoCell> where T : Swift.Equatable {
+  open var presentationMode: Eureka.PresentationMode<UIKit.UIViewController>?
+  open var onPresentCallback: ((Eureka.FormViewController, Eureka.SelectorViewController<Eureka.SelectorRow<DIGIPROSDKSO._ComboDinamicoRowOf<T>.Cell>>) -> Swift.Void)?
+  open var customController: DIGIPROSDKSO.ComboDinamicoViewController?
+  required public init(tag: Swift.String?)
+  override open func customDidSelect()
+  override open func customUpdateCell()
+  override open func prepare(for segue: UIKit.UIStoryboardSegue)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers final public class ComboDinamicoRow : DIGIPROSDKSO._ComboDinamicoRowOf<Swift.String>, Eureka.RowType {
+  @objc deinit
+  required public init(tag: Swift.String?)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class HeaderView : UIKit.UIView {
+  public var lblRequired: UIKit.UILabel
+  public var btninfo: UIKit.UIButton
+  public var lblTitle: UIKit.UILabel
+  public var lblSubtitle: UIKit.UILabel
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class ListaTemporalViewController : Eureka.FormViewController, Eureka.TypedRowControllerType, UIKit.UINavigationControllerDelegate {
+  public var row: Eureka.RowOf<Swift.String>!
+  public var rowList: DIGIPROSDKSO.ListaTemporalCell?
+  public var onDismissCallback: ((UIKit.UIViewController) -> ())?
+  public var atributos: DIGIPROSDK.Atributos_listatemporal?
+  public var isInitialized: Swift.Bool
+  public var delegate: DIGIPROSDKSO.ListaViewControllerDelegate!
+  @objc @IBAction public func cerrarAction(_ sender: Any)
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  public func initForm(_ form: Eureka.Form)
+  @objc override dynamic public func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreGraphics.CGFloat
+  @objc override dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+  @objc deinit
+  override public init(style: UIKit.UITableView.Style)
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  public typealias RowValue = Swift.String
+}
+public protocol ListaViewControllerDelegate {
+  func didTapHideRow()
+}
+@_inheritsConvenienceInitializers public class BotonCell : Eureka.Cell<Swift.String>, Eureka.CellType {
+  public var formDelegate: DIGIPROSDK.FormularioDelegate?
+  public var rulesOnProperties: [(xml: DIGIPROSDK.AEXMLElement, vrb: Swift.String)]
+  public var rulesOnChange: [DIGIPROSDK.AEXMLElement]
+  public var elemento: DIGIPROSDK.Elemento
+  public var atributos: DIGIPROSDK.Atributos_boton?
+  public var clickCount: Swift.Int
+  public var h: CoreGraphics.CGFloat
+  public var genericRow: DIGIPROSDKSO.BotonRow! {
+    get
+  }
+  public var isInfoToolTipVisible: Swift.Bool
+  public var toolTip: DIGIPROSDK.EasyTipView?
+  public var est: DIGIPROSDK.FEEstadistica?
+  public var isEvento: Swift.Bool
+  public var xmlParsed: DIGIPROSDK.Elemento
+  public var xmlAEXML: DIGIPROSDK.AEXMLDocument
+  public func setObject(obj: DIGIPROSDK.Elemento)
+  override open func update()
+  @objc required dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  override open func setup()
+  @objc public func setAyuda(_ sender: Any)
+  override open func didSelect()
+  public func setColors()
+  @objc @IBAction public func botonAction(_ sender: UIKit.UIButton?)
+  @objc deinit
+}
+extension BotonCell : DIGIPROSDK.ObjectFormDelegate {
+  public func setEstadistica()
+  public func setTextStyle(_ style: Swift.String)
+  public func setDecoration(_ decor: Swift.String)
+  public func setHeight(_ tamanio: Swift.String)
+  public func setWidth(_ width: Swift.String, tit titBoton: Swift.String)
+  public func setAlignment(_ align: Swift.String)
+  public func setAlignmentWidth(_ align: Swift.String, _ width: Swift.String)
+  public func setVariableHeight(Height h: CoreGraphics.CGFloat)
+  public func setHeightFromTitles()
+  public func setTitleText(_ text: Swift.String)
+  public func setSubtitleText(_ text: Swift.String)
+  public func setPlaceholder(_ text: Swift.String)
+  public func setInfo()
+  public func toogleToolTip(_ help: Swift.String)
+  public func setMessage(_ string: Swift.String, _ state: DIGIPROSDK.enumErrorType)
+  public func initRules()
+  public func setMinMax()
+  public func setExpresionRegular()
+  public func setOcultarTitulo(_ bool: Swift.Bool)
+  public func setOcultarSubtitulo(_ bool: Swift.Bool)
+  public func setHabilitado(_ bool: Swift.Bool)
+  public func setEdited(v: Swift.String)
+  public func setEdited(v: Swift.String, isRobot: Swift.Bool)
+  public func setVisible(_ bool: Swift.Bool)
+  public func setURLlink(_ urllink: Swift.String)
+  public func resetValidation()
+  public func setRequerido(_ bool: Swift.Bool)
+  public func updateIfIsValid(isDefault: Swift.Bool = false)
+  public func triggerEvent(_ action: Swift.String)
+  public func setRulesOnProperties()
+  public func triggerRulesOnProperties(_ action: Swift.String)
+  public func setRulesOnChange()
+  public func triggerRulesOnChange(_ action: Swift.String?)
+  public func setMathematics(_ bool: Swift.Bool, _ id: Swift.String)
+}
+extension BotonCell {
+  public func getMessageText() -> Swift.String
+  public func getRowEnabled() -> Swift.Bool
+  public func getRequired() -> Swift.Bool
+  public func getTitleLabel() -> Swift.String
+  public func getSubtitleLabel() -> Swift.String
+}
+@_inheritsConvenienceInitializers public class _EtiquetaRow : Eureka.Row<DIGIPROSDKSO.EtiquetaCell>, Eureka.KeyboardReturnHandler {
+  open var keyboardReturnType: Eureka.KeyboardReturnTypeConfiguration?
+  required public init(tag: Swift.String?)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers final public class EtiquetaRow : DIGIPROSDKSO._EtiquetaRow, Eureka.RowType {
+  @objc deinit
+  required public init(tag: Swift.String?)
+}
+@_inheritsConvenienceInitializers public class _PlantillaRow : Eureka.Row<DIGIPROSDKSO.PlantillaCell>, Eureka.KeyboardReturnHandler {
+  open var keyboardReturnType: Eureka.KeyboardReturnTypeConfiguration?
+  required public init(tag: Swift.String?)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers final public class PlantillaRow : DIGIPROSDKSO._PlantillaRow, Eureka.RowType {
+  @objc deinit
+  required public init(tag: Swift.String?)
+}
+public protocol TablaPlantillaViewControllerDelegate {
+  func didTapCancel()
+  func didTapSave() -> Swift.Bool
+  func didTapSaveCancel() -> Swift.Bool
+  func didTapUpdate() -> Swift.Bool
+  func settingMessages(_ mssg: Swift.String, _ type: Swift.String)
+}
+@objc @_inheritsConvenienceInitializers public class TablaPlantillaViewController : Eureka.FormViewController {
+  public var row: DIGIPROSDKSO.TablaCell?
+  public var elementsForValidate: [Swift.String]
+  public var delegate: DIGIPROSDKSO.TablaPlantillaViewControllerDelegate!
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func didReceiveMemoryWarning()
+  public func validationRowsForm(_ elements: [Eureka.BaseRow]?)
+  public func validateRowFromForm(_ row: Eureka.BaseRow)
+  @objc deinit
+  override public init(style: UIKit.UITableView.Style)
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+}
+extension TablaPlantillaViewController {
+  public func executeClear()
+  public func executeTableAdd()
+  public func executeAddClear()
+  public func executeCloseClear()
+}
+@_inheritsConvenienceInitializers public class NumeroCell : Eureka.Cell<Swift.String>, Eureka.CellType, UIKit.UITextFieldDelegate {
+  public var formDelegate: DIGIPROSDK.FormularioDelegate?
+  public var rulesOnProperties: [(xml: DIGIPROSDK.AEXMLElement, vrb: Swift.String)]
+  public var rulesOnChange: [DIGIPROSDK.AEXMLElement]
+  public var elemento: DIGIPROSDK.Elemento
+  public var atributos: DIGIPROSDK.Atributos_numero?
+  public var genericRow: DIGIPROSDKSO.NumeroRow! {
+    get
+  }
+  public var isInfoToolTipVisible: Swift.Bool
+  public var toolTip: DIGIPROSDK.EasyTipView?
+  public var est: DIGIPROSDK.FEEstadistica?
+  public func setObject(obj: DIGIPROSDK.Elemento)
+  override open func update()
+  @objc required dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  override open func setup()
+  @objc public func setAyuda(_ sender: Any)
+  override open func didSelect()
+  @objc open func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
+  @objc open func textFieldDidEndEditing(_ textField: UIKit.UITextField)
+  @objc open func textFieldShouldReturn(_ textField: UIKit.UITextField) -> Swift.Bool
+  @objc open func textField(_ textField: UIKit.UITextField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
+  @objc open func textFieldShouldBeginEditing(_ textField: UIKit.UITextField) -> Swift.Bool
+  @objc open func textFieldShouldClear(_ textField: UIKit.UITextField) -> Swift.Bool
+  @objc open func textFieldShouldEndEditing(_ textField: UIKit.UITextField) -> Swift.Bool
+  @objc open func textFieldDidChange(_ textField: UIKit.UITextField)
+  override open func cellCanBecomeFirstResponder() -> Swift.Bool
+  override open func cellBecomeFirstResponder(withDirection: Eureka.Direction) -> Swift.Bool
+  override open func cellResignFirstResponder() -> Swift.Bool
+  @objc deinit
+}
+extension NumeroCell : DIGIPROSDK.ObjectFormDelegate {
+  public func setEstadistica()
+  public func setTextStyle(_ style: Swift.String)
+  public func setDecoration(_ decor: Swift.String)
+  public func setAlignment(_ align: Swift.String)
+  public func setVariableHeight(Height h: CoreGraphics.CGFloat)
+  public func setTitleText(_ text: Swift.String)
+  public func setSubtitleText(_ text: Swift.String)
+  public func setHeightFromTitles()
+  public func setPlaceholder(_ text: Swift.String)
+  public func setInfo()
+  public func toogleToolTip(_ help: Swift.String)
+  public func setMessage(_ string: Swift.String, _ state: DIGIPROSDK.enumErrorType)
+  public func initRules()
+  public func setMinMax()
+  public func setExpresionRegular()
+  public func setOcultarTitulo(_ bool: Swift.Bool)
+  public func setOcultarSubtitulo(_ bool: Swift.Bool)
+  public func setHabilitado(_ bool: Swift.Bool)
+  public func setEdited(v: Swift.String)
+  public func setEdited(v: Swift.String, isRobot: Swift.Bool)
+  public func setVisible(_ bool: Swift.Bool)
+  public func resetValidation()
+  public func setRequerido(_ bool: Swift.Bool)
+  public func updateIfIsValid(isDefault: Swift.Bool = false)
+  public func triggerEvent(_ action: Swift.String)
+  public func setRulesOnProperties()
+  public func triggerRulesOnProperties(_ action: Swift.String)
+  public func setRulesOnChange()
+  public func triggerRulesOnChange(_ action: Swift.String?)
+  public func setMathematics(_ bool: Swift.Bool, _ id: Swift.String)
+}
+extension NumeroCell {
+  public func getMessageText() -> Swift.String
+  public func getRowEnabled() -> Swift.Bool
+  public func getRequired() -> Swift.Bool
+  public func getTitleLabel() -> Swift.String
+  public func getSubtitleLabel() -> Swift.String
+}
+@_inheritsConvenienceInitializers open class _FechaRow : DIGIPROSDKSO._FechaFieldRow {
+  required public init(tag: Swift.String?)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers final public class FechaRow : DIGIPROSDKSO._FechaRow, Eureka.RowType {
+  required public init(tag: Swift.String?)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers open class _FechaFieldRow : Eureka.Row<DIGIPROSDKSO.FechaCell>, Eureka.DatePickerRowProtocol, Eureka.NoValueDisplayTextConformance {
+  open var minimumDate: Foundation.Date?
+  open var maximumDate: Foundation.Date?
+  open var minuteInterval: Swift.Int?
+  open var dateFormatter: Foundation.DateFormatter?
+  open var noValueDisplayText: Swift.String?
+  required public init(tag: Swift.String?)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers open class _LogicoRow : Eureka.Row<DIGIPROSDKSO.LogicoCell> {
+  required public init(tag: Swift.String?)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers final public class LogicoRow : DIGIPROSDKSO._LogicoRow, Eureka.RowType {
+  required public init(tag: Swift.String?)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class _TextoAreaRow : Eureka.Row<DIGIPROSDKSO.TextoAreaCell>, Eureka.KeyboardReturnHandler {
+  open var keyboardReturnType: Eureka.KeyboardReturnTypeConfiguration?
+  required public init(tag: Swift.String?)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers final public class TextoAreaRow : DIGIPROSDKSO._TextoAreaRow, Eureka.RowType {
+  @objc deinit
+  required public init(tag: Swift.String?)
+}
+@_inheritsConvenienceInitializers public class _SliderNewRow : Eureka.Row<DIGIPROSDKSO.SliderNewCell>, Eureka.KeyboardReturnHandler {
+  open var keyboardReturnType: Eureka.KeyboardReturnTypeConfiguration?
+  required public init(tag: Swift.String?)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers final public class SliderNewRow : DIGIPROSDKSO._SliderNewRow, Eureka.RowType {
+  @objc deinit
+  required public init(tag: Swift.String?)
+}
+@_inheritsConvenienceInitializers open class TablaCell : Eureka.Cell<Swift.String>, Eureka.CellType, DIGIPROSDKSO.TablaPlantillaViewControllerDelegate, UIKit.UIScrollViewDelegate, UIKit.UICollectionViewDataSource, UIKit.UICollectionViewDelegate, UIKit.UICollectionViewDelegateFlowLayout {
+  public var formDelegate: DIGIPROSDK.FormularioDelegate?
+  public var rulesOnProperties: [(xml: DIGIPROSDK.AEXMLElement, vrb: Swift.String)]
+  public var rulesOnChange: [DIGIPROSDK.AEXMLElement]
+  public var records: [(record: Swift.Int, json: Swift.String)]
+  public var recordsVisibles: [(record: Swift.Int, json: Swift.String)]
+  public var recordsHide: [Swift.Int]
+  public var columnByRowHidden: Foundation.NSMutableDictionary
+  public var elementsForValidate: [Swift.String]
+  public var ElementosArray: Foundation.NSMutableDictionary
+  public var ElementosCleanArray: [Foundation.NSMutableDictionary]
+  public var cleanProd: Foundation.NSMutableDictionary
+  public var allCleanedData: [Foundation.NSMutableDictionary]
+  public var elemento: DIGIPROSDK.Elemento
+  public var atributos: DIGIPROSDK.Atributos_tabla?
+  public var genericRow: DIGIPROSDKSO.TablaRow! {
+    get
+  }
+  public var isInfoToolTipVisible: Swift.Bool
+  public var toolTip: DIGIPROSDK.EasyTipView?
+  public var est: DIGIPROSDK.FEEstadistica?
+  public var plantillamapear: Swift.String
+  public var theJsonCleanText: Swift.String
+  public var jsonService: Swift.Bool
+  public var clickInRow: Swift.String
+  public var viewController: DIGIPROSDKSO.TablaPlantillaViewController?
+  public var dataRows: [[Swift.String]]
+  public var ff: [(id: Swift.String, formula: Swift.String)]
+  @objc required dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  public func didTapCancel()
+  public func didTapSave() -> Swift.Bool
+  public func didTapSaveCancel() -> Swift.Bool
+  public func settingMessages(_ mssg: Swift.String, _ type: Swift.String)
+  public func calculateTotal() -> [(id: Swift.String, formula: Swift.String)]
+  public func didTapUpdate() -> Swift.Bool
+  public func didTapGenerar()
+  public func getValuesFromJson(_ json: Swift.String)
+  public func setValuesFromJson()
+  public func setObject(obj: DIGIPROSDK.Elemento, hijos: Eureka.Form)
+  public func setElements(_ elementos: Swift.Array<DIGIPROSDK.Elemento>)
+  override open func setup()
+  @objc public func setAyuda(_ sender: Any)
+  override open func update()
+  override open func didSelect()
+  public func setCleanAttributes(idunico id: Swift.String, idelem e: Swift.String, valor l: Swift.String, metadato m: Swift.String)
+  public func setMetaCleanAttributes(_ e: DIGIPROSDK.Elemento, _ isPrellenado: Swift.Bool)
+  public func setMetaAttributes(_ e: DIGIPROSDK.Elemento, _ isPrellenado: Swift.Bool)
+  @objc public func collectionView(_ collectionView: UIKit.UICollectionView, numberOfItemsInSection section: Swift.Int) -> Swift.Int
+  @objc public func collectionView(_ collectionView: UIKit.UICollectionView, cellForItemAt indexPath: Foundation.IndexPath) -> UIKit.UICollectionViewCell
+  public func getTotal(_ index: Swift.Int) -> Swift.String
+  @objc public func collectionView(_ collectionView: UIKit.UICollectionView, didSelectItemAt indexPath: Foundation.IndexPath)
+  @objc deinit
+}
+extension TablaCell : DIGIPROSDK.ObjectFormDelegate {
+  public func setEstadistica()
+  public func setTextStyle(_ style: Swift.String)
+  public func setDecoration(_ decor: Swift.String)
+  public func setAlignment(_ align: Swift.String)
+  public func setVariableHeight(Height h: CoreGraphics.CGFloat)
+  public func setTitleText(_ text: Swift.String)
+  public func setSubtitleText(_ text: Swift.String)
+  public func setHeightFromTitles()
+  public func setPlaceholder(_ text: Swift.String)
+  public func setInfo()
+  public func toogleToolTip(_ help: Swift.String)
+  public func setMessage(_ string: Swift.String, _ state: DIGIPROSDK.enumErrorType)
+  public func initRules()
+  public func setMinMax()
+  public func setExpresionRegular()
+  public func setOcultarTitulo(_ bool: Swift.Bool)
+  public func setOcultarSubtitulo(_ bool: Swift.Bool)
+  public func setHabilitado(_ bool: Swift.Bool)
+  public func setEdited(v: Swift.String)
+  public func setEdited(v: Swift.String, isRobot: Swift.Bool)
+  public func setVisible(_ bool: Swift.Bool)
+  public func resetValidation()
+  public func setRequerido(_ bool: Swift.Bool)
+  public func updateIfIsValid(isDefault: Swift.Bool = false)
+  public func triggerEvent(_ action: Swift.String)
+  public func setVisibility(_ isStreched: Swift.Bool)
+  public func reloadTotales()
+  public func reloadDesign()
+  public func setVisibleObjects(hijos: Eureka.Form)
+  public func setDesign()
+  public func setPermissions()
+  public func setButtonText()
+  public func setColorButton()
+  public func setRulesOnProperties()
+  public func triggerRulesOnProperties(_ action: Swift.String)
+  public func setRulesOnChange()
+  public func triggerRulesOnChange(_ action: Swift.String?)
+  public func setMathematics(_ bool: Swift.Bool, _ id: Swift.String)
+}
+extension TablaCell {
+  public func getMessageText() -> Swift.String
+  public func getRowEnabled() -> Swift.Bool
+  public func getRequired() -> Swift.Bool
+  public func getTitleLabel() -> Swift.String
+  public func getSubtitleLabel() -> Swift.String
+  public func executeTableShowAdd()
+}
+@_inheritsConvenienceInitializers public class RangoFechasCell : Eureka.Cell<Swift.String>, Eureka.CellType, UIKit.UITextFieldDelegate, DIGIPROSDK.CalendarDateRangePickerViewControllerDelegate {
+  public var formDelegate: DIGIPROSDK.FormularioDelegate?
+  public var rulesOnProperties: [(xml: DIGIPROSDK.AEXMLElement, vrb: Swift.String)]
+  public var rulesOnChange: [DIGIPROSDK.AEXMLElement]
+  public var elemento: DIGIPROSDK.Elemento
+  public var atributos: DIGIPROSDK.Atributos_rangofechas?
+  public var genericRow: DIGIPROSDKSO.RangoFechasRow! {
+    get
+  }
+  public var isInfoToolTipVisible: Swift.Bool
+  public var toolTip: DIGIPROSDK.EasyTipView?
+  public var formato: Swift.String
+  final public let formatter: Foundation.DateFormatter
+  public var est: DIGIPROSDK.FEEstadistica?
+  public func didTapCancel()
+  public func didTapDoneWithDateRange(startDate: Foundation.Date!, endDate: Foundation.Date!)
+  override open func didSelect()
+  public func setObject(obj: DIGIPROSDK.Elemento)
+  @objc required dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  override open func setup()
+  @objc public func setAyuda(_ sender: Any)
+  override open func update()
+  @objc open func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
+  @objc open func textFieldDidEndEditing(_ textField: UIKit.UITextField)
+  @objc open func textFieldShouldReturn(_ textField: UIKit.UITextField) -> Swift.Bool
+  @objc open func textField(_ textField: UIKit.UITextField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
+  @objc open func textFieldShouldBeginEditing(_ textField: UIKit.UITextField) -> Swift.Bool
+  @objc open func textFieldShouldClear(_ textField: UIKit.UITextField) -> Swift.Bool
+  @objc open func textFieldShouldEndEditing(_ textField: UIKit.UITextField) -> Swift.Bool
+  @objc open func textFieldDidChange(_ textField: UIKit.UITextField)
+  override open func cellCanBecomeFirstResponder() -> Swift.Bool
+  override open func cellBecomeFirstResponder(withDirection: Eureka.Direction) -> Swift.Bool
+  override open func cellResignFirstResponder() -> Swift.Bool
+  @objc deinit
+}
+extension RangoFechasCell : DIGIPROSDK.ObjectFormDelegate {
+  public func setEstadistica()
+  public func setTextStyle(_ style: Swift.String)
+  public func setDecoration(_ decor: Swift.String)
+  public func setAlignment(_ align: Swift.String)
+  public func setVariableHeight(Height h: CoreGraphics.CGFloat)
+  public func setTitleText(_ text: Swift.String)
+  public func setSubtitleText(_ text: Swift.String)
+  public func setHeightFromTitles()
+  public func setPlaceholder(_ text: Swift.String)
+  public func setInfo()
+  public func toogleToolTip(_ help: Swift.String)
+  public func setMessage(_ string: Swift.String, _ state: DIGIPROSDK.enumErrorType)
+  public func initRules()
+  public func setMinMax()
+  public func setMinMax(_ calendar: DIGIPROSDK.CalendarDateRangePickerViewController)
+  public func setValorInValorFin(_ calendar: DIGIPROSDK.CalendarDateRangePickerViewController)
+  public func setExpresionRegular()
+  public func setOcultarTitulo(_ bool: Swift.Bool)
+  public func setOcultarSubtitulo(_ bool: Swift.Bool)
+  public func setHabilitado(_ bool: Swift.Bool)
+  public func setEdited(v: Swift.String)
+  public func setEdited(v: Swift.String, isRobot: Swift.Bool)
+  public func setVisible(_ bool: Swift.Bool)
+  public func resetValidation()
+  public func setRequerido(_ bool: Swift.Bool)
+  public func updateIfIsValid(isDefault: Swift.Bool = false)
+  public func triggerEvent(_ action: Swift.String)
+  public func setRulesOnProperties()
+  public func triggerRulesOnProperties(_ action: Swift.String)
+  public func setRulesOnChange()
+  public func triggerRulesOnChange(_ action: Swift.String?)
+  public func setMathematics(_ bool: Swift.Bool, _ id: Swift.String)
+}
+extension RangoFechasCell {
+  public func getMessageText() -> Swift.String
+  public func getRowEnabled() -> Swift.Bool
+  public func getRequired() -> Swift.Bool
+  public func getTitleLabel() -> Swift.String
+  public func getSubtitleLabel() -> Swift.String
+}
+@_inheritsConvenienceInitializers open class _ListaRowOf<T> : Eureka.Row<DIGIPROSDKSO.ListaCell> where T : Swift.Equatable {
+  open var presentationMode: Eureka.PresentationMode<UIKit.UIViewController>?
+  open var onPresentCallback: ((Eureka.FormViewController, Eureka.SelectorViewController<Eureka.SelectorRow<DIGIPROSDKSO._ListaRowOf<T>.Cell>>) -> Swift.Void)?
+  open var customController: DIGIPROSDKSO.ListaViewController?
+  required public init(tag: Swift.String?)
+  override open func customDidSelect()
+  override open func customUpdateCell()
+  override open func prepare(for segue: UIKit.UIStoryboardSegue)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers final public class ListaRow : DIGIPROSDKSO._ListaRowOf<Swift.String>, Eureka.RowType {
+  @objc deinit
+  required public init(tag: Swift.String?)
+}
+@_inheritsConvenienceInitializers open class _TablaRowOf<T> : Eureka.Row<DIGIPROSDKSO.TablaCell> where T : Swift.Equatable {
+  open var presentationMode: Eureka.PresentationMode<UIKit.UIViewController>?
+  open var onPresentCallback: ((Eureka.FormViewController, Eureka.SelectorViewController<Eureka.SelectorRow<DIGIPROSDKSO._TablaRowOf<T>.Cell>>) -> Swift.Void)?
+  required public init(tag: Swift.String?)
+  override open func customUpdateCell()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers final public class TablaRow : DIGIPROSDKSO._TablaRowOf<Swift.String>, Eureka.RowType {
+  @objc deinit
+  required public init(tag: Swift.String?)
+}
+@_inheritsConvenienceInitializers public class _WizardRow : Eureka.Row<DIGIPROSDKSO.WizardCell> {
+  required public init(tag: Swift.String?)
+  override public func customDidSelect()
+  override public func customUpdateCell()
+  override public func prepare(for segue: UIKit.UIStoryboardSegue)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers final public class WizardRow : DIGIPROSDKSO._WizardRow, Eureka.RowType {
+  required public init(tag: Swift.String?)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class HeaderTabRow : Eureka.Row<DIGIPROSDKSO.HeaderTabCell>, Eureka.RowType {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class _EspacioRow : Eureka.Row<DIGIPROSDKSO.EspacioCell>, Eureka.KeyboardReturnHandler {
+  open var keyboardReturnType: Eureka.KeyboardReturnTypeConfiguration?
+  required public init(tag: Swift.String?)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers final public class EspacioRow : DIGIPROSDKSO._EspacioRow, Eureka.RowType {
+  @objc deinit
+  required public init(tag: Swift.String?)
+}
+@_inheritsConvenienceInitializers public class _TextoRow : Eureka.Row<DIGIPROSDKSO.TextoCell>, Eureka.KeyboardReturnHandler {
+  open var keyboardReturnType: Eureka.KeyboardReturnTypeConfiguration?
+  required public init(tag: Swift.String?)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers final public class TextoRow : DIGIPROSDKSO._TextoRow, Eureka.RowType {
+  @objc deinit
+  required public init(tag: Swift.String?)
+}
+@_inheritsConvenienceInitializers public class _RangoFechasRow : Eureka.Row<DIGIPROSDKSO.RangoFechasCell>, Eureka.KeyboardReturnHandler {
+  open var keyboardReturnType: Eureka.KeyboardReturnTypeConfiguration?
+  open var presentationMode: Eureka.PresentationMode<UIKit.UIViewController>?
+  open var onPresentCallback: ((Eureka.FormViewController, Eureka.SelectorViewController<Eureka.SelectorRow<DIGIPROSDKSO._RangoFechasRow.Cell>>) -> Swift.Void)?
+  required public init(tag: Swift.String?)
+  override open func customUpdateCell()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers final public class RangoFechasRow : DIGIPROSDKSO._RangoFechasRow, Eureka.RowType {
+  @objc deinit
+  required public init(tag: Swift.String?)
+}
+@_inheritsConvenienceInitializers public class LogoCell : Eureka.Cell<Swift.String>, Eureka.CellType, UIKit.UIScrollViewDelegate {
+  public var formDelegate: DIGIPROSDK.FormularioDelegate?
+  public var rulesOnProperties: [(xml: DIGIPROSDK.AEXMLElement, vrb: Swift.String)]
+  public var rulesOnChange: [DIGIPROSDK.AEXMLElement]
+  public var elemento: DIGIPROSDK.Elemento
+  public var atributos: DIGIPROSDK.Atributos_logo?
+  public var genericRow: DIGIPROSDKSO.LogoRow! {
+    get
+  }
+  public var isInfoToolTipVisible: Swift.Bool
+  public var toolTip: DIGIPROSDK.EasyTipView?
+  public var est: DIGIPROSDK.FEEstadistica?
+  public func setObject(obj: DIGIPROSDK.Elemento)
+  public func setImage(_ strImage: Swift.String)
+  override open func update()
+  @objc required dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  override open func setup()
+  @objc public func setAyuda(_ sender: Any)
+  @objc public func viewForZooming(in scrollView: UIKit.UIScrollView) -> UIKit.UIView?
+  @objc public func scrollViewDidZoom(_ scrollView: UIKit.UIScrollView)
+  @objc public func adjustFrameToCenter()
+  override open func didSelect()
+  @objc deinit
+}
+extension LogoCell : DIGIPROSDK.ObjectFormDelegate {
+  public func setEstadistica()
+  public func setTextStyle(_ style: Swift.String)
+  public func setDecoration(_ decor: Swift.String)
+  public func setAlignment(_ align: Swift.String)
+  public func setVariableHeight(Height h: CoreGraphics.CGFloat)
+  public func setHeightFromTitles()
+  public func setTitleText(_ text: Swift.String)
+  public func setSubtitleText(_ text: Swift.String)
+  public func setPlaceholder(_ text: Swift.String)
+  public func setInfo()
+  public func toogleToolTip(_ help: Swift.String)
+  public func setMessage(_ string: Swift.String, _ state: DIGIPROSDK.enumErrorType)
+  public func initRules()
+  public func setMinMax()
+  public func setExpresionRegular()
+  public func setOcultarTitulo(_ bool: Swift.Bool)
+  public func setOcultarSubtitulo(_ bool: Swift.Bool)
+  public func setHabilitado(_ bool: Swift.Bool)
+  public func setEdited(v: Swift.String)
+  public func setEdited(v: Swift.String, isRobot: Swift.Bool)
+  public func setVisible(_ bool: Swift.Bool)
+  public func resetValidation()
+  public func setRequerido(_ bool: Swift.Bool)
+  public func updateIfIsValid(isDefault: Swift.Bool = false)
+  public func triggerEvent(_ action: Swift.String)
+  public func setRulesOnProperties()
+  public func triggerRulesOnProperties(_ action: Swift.String)
+  public func setRulesOnChange()
+  public func triggerRulesOnChange(_ action: Swift.String?)
+  public func setMathematics(_ bool: Swift.Bool, _ id: Swift.String)
+}
+extension LogoCell {
+  public func getMessageText() -> Swift.String
+  public func getRowEnabled() -> Swift.Bool
+  public func getRequired() -> Swift.Bool
+  public func getTitleLabel() -> Swift.String
+  public func getSubtitleLabel() -> Swift.String
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class HeaderRow : Eureka.Row<DIGIPROSDKSO.HeaderCell>, Eureka.RowType {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers open class HeaderCell : Eureka.Cell<Swift.String>, Eureka.CellType {
+  public var formDelegate: DIGIPROSDK.FormularioDelegate?
+  public var rulesOnProperties: [(xml: DIGIPROSDK.AEXMLElement, vrb: Swift.String)]
+  public var rulesOnChange: [DIGIPROSDK.AEXMLElement]
+  public var sects: [(id: Swift.String, attributes: DIGIPROSDK.Atributos_seccion, elements: [Swift.String])]
+  public var elemento: DIGIPROSDK.Elemento
+  public var atributos: DIGIPROSDK.Atributos_seccion?
+  public var genericRow: DIGIPROSDKSO.HeaderRow! {
+    get
+  }
+  public var isSectionHeader: Swift.Bool
+  public var isTab: Swift.Bool
+  @objc required dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  override open func setup()
+  @objc public func setAyuda(_ sender: Any)
+  override open func update()
+  public func setElements(_ section: [(id: Swift.String, attributes: DIGIPROSDK.Atributos_seccion, elements: [Swift.String])])
+  public func setObjectTab(obj: DIGIPROSDK.Elemento, isTab: Swift.Bool)
+  public func setObject(obj: DIGIPROSDK.Elemento, title: Swift.String, isSctHeader: Swift.Bool)
+  @objc deinit
+}
+extension HeaderCell : DIGIPROSDK.ObjectFormDelegate {
+  public func setEstadistica()
+  public func setTextStyle(_ style: Swift.String)
+  public func setDecoration(_ decor: Swift.String)
+  public func setAlignment(_ align: Swift.String)
+  public func setVariableHeight(Height h: CoreGraphics.CGFloat)
+  public func setTitleText(_ text: Swift.String)
+  public func setSubtitleText(_ text: Swift.String)
+  public func setHeightFromTitles()
+  public func setPlaceholder(_ text: Swift.String)
+  public func setInfo()
+  public func toogleToolTip(_ help: Swift.String)
+  public func setMessage(_ string: Swift.String, _ state: DIGIPROSDK.enumErrorType)
+  public func initRules()
+  public func setMinMax()
+  public func setExpresionRegular()
+  public func setOcultarTitulo(_ bool: Swift.Bool)
+  public func setOcultarSubtitulo(_ bool: Swift.Bool)
+  public func setHabilitado(_ bool: Swift.Bool)
+  public func setEdited(v: Swift.String)
+  public func setEdited(v: Swift.String, isRobot: Swift.Bool)
+  public func setVisible(_ bool: Swift.Bool)
+  public func resetValidation()
+  public func setRequerido(_ bool: Swift.Bool)
+  public func updateIfIsValid(isDefault: Swift.Bool = false)
+  public func triggerEvent(_ action: Swift.String)
+  public func setBck_Clr()
+  public func setRulesOnProperties()
+  public func triggerRulesOnProperties(_ action: Swift.String)
+  public func setRulesOnChange()
+  public func triggerRulesOnChange(_ action: Swift.String?)
+  public func setMathematics(_ bool: Swift.Bool, _ id: Swift.String)
+}
+extension HeaderCell {
+  public func getMessageText() -> Swift.String
+  public func getRowEnabled() -> Swift.Bool
+  public func getRequired() -> Swift.Bool
+  public func getTitleLabel() -> Swift.String
+  public func getSubtitleLabel() -> Swift.String
+}
+@_inheritsConvenienceInitializers open class MarcadoDocumentoCell : Eureka.Cell<Swift.String>, Eureka.CellType {
+  public var elemento: DIGIPROSDK.Elemento
+  public var atributos: DIGIPROSDK.Atributos_marcadodocumentos?
+  public var genericRow: DIGIPROSDKSO.MarcadoDocumentoRow! {
+    get
+  }
+  public var gralButton: DIGIPROSDK.DLRadioButton
+  public var catOptionCheck: [DIGIPROSDK.FEItemCatalogo]
+  public var catOptionCheck2: [DIGIPROSDK.FEListTipoDoc]
+  public var formDelegate: DIGIPROSDK.FormularioDelegate?
+  public var rulesOnProperties: [(xml: DIGIPROSDK.AEXMLElement, vrb: Swift.String)]
+  public var rulesOnChange: [DIGIPROSDK.AEXMLElement]
+  public var rulesOnAction: [DIGIPROSDK.AEXMLElement]
+  public var isInfoToolTipVisible: Swift.Bool
+  public var toolTip: DIGIPROSDK.EasyTipView?
+  public var est: DIGIPROSDK.FEEstadistica?
+  public func setObject(obj: DIGIPROSDK.Elemento)
+  override open func update()
+  @objc required dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  override open func setup()
+  @objc public func setAyuda(_ sender: Any)
+  override open func didSelect()
+  @objc @IBAction public func selectedButton(radioButton: DIGIPROSDK.DLRadioButton, isRobot: Swift.Bool)
+  @objc deinit
+}
+extension MarcadoDocumentoCell : DIGIPROSDK.ObjectFormDelegate {
+  public func setEstadistica()
+  public func setTextStyle(_ style: Swift.String)
+  public func setDecoration(_ decor: Swift.String)
+  public func setAlignment(_ align: Swift.String)
+  public func setVariableHeight(Height h: CoreGraphics.CGFloat)
+  public func setTitleText(_ text: Swift.String)
+  public func setSubtitleText(_ text: Swift.String)
+  public func setHeightFromTitles()
+  public func setPlaceholder(_ text: Swift.String)
+  public func setInfo()
+  public func toogleToolTip(_ help: Swift.String)
+  public func setMessage(_ string: Swift.String, _ state: DIGIPROSDK.enumErrorType)
+  public func initRules()
+  public func setMinMax()
+  public func setExpresionRegular()
+  public func setOcultarTitulo(_ bool: Swift.Bool)
+  public func setOcultarSubtitulo(_ bool: Swift.Bool)
+  public func setOcultarMsjOpcionCatalogo(_ text: Swift.String)
+  public func setHabilitado(_ bool: Swift.Bool)
+  public func setEdited(v: Swift.String)
+  public func setEdited(v: Swift.String, isRobot: Swift.Bool = false)
+  public func setVisible(_ bool: Swift.Bool)
+  public func resetValidation()
+  public func setDefaultValue()
+  public func setRequerido(_ bool: Swift.Bool)
+  public func updateIfIsValid(isDefault: Swift.Bool = false)
+  public func setValuesList()
+  public func triggerEvent(_ action: Swift.String)
+  public func setRulesOnProperties()
+  public func triggerRulesOnProperties(_ action: Swift.String)
+  public func setRulesOnChange()
+  public func triggerRulesOnChange(_ action: Swift.String?)
+  public func triggerRulesOnAction(_ action: Swift.String?)
+  public func setMathematics(_ bool: Swift.Bool, _ id: Swift.String)
+}
+extension MarcadoDocumentoCell {
+  public func getMessageText() -> Swift.String
+  public func getRowEnabled() -> Swift.Bool
+  public func getRequired() -> Swift.Bool
+  public func getTitleLabel() -> Swift.String
+  public func getSubtitleLabel() -> Swift.String
+  public func getTxtInput() -> Swift.String
+}
+@_inheritsConvenienceInitializers open class HeaderTabCell : Eureka.Cell<Swift.String>, Eureka.CellType {
+  public var sects: [(id: Swift.String, attributes: DIGIPROSDK.Atributos_seccion, elements: [Swift.String])]
+  public var formDelegate: DIGIPROSDK.FormularioDelegate?
+  public var rulesOnProperties: [(xml: DIGIPROSDK.AEXMLElement, vrb: Swift.String)]
+  public var rulesOnChange: [DIGIPROSDK.AEXMLElement]
+  public var elemento: DIGIPROSDK.Elemento
+  public var atributos: DIGIPROSDK.Atributos_tabber?
+  public var genericRow: DIGIPROSDKSO.HeaderTabRow! {
+    get
+  }
+  @objc required dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  override open func setup()
+  @objc public func setAyuda(_ sender: Any)
+  override open func update()
+  public func rldSegments()
+  public func setObject(obj: DIGIPROSDK.Elemento, _ sections: [(id: Swift.String, attributes: DIGIPROSDK.Atributos_seccion, elements: [Swift.String])])
+  public func selectOption(_ index: Swift.Int)
+  public func segmentedControlAction(_ ii: Swift.Int)
+  @objc deinit
+}
+extension HeaderTabCell : DIGIPROSDK.ObjectFormDelegate {
+  public func setEstadistica()
+  public func setTextStyle(_ style: Swift.String)
+  public func setDecoration(_ decor: Swift.String)
+  public func setAlignment(_ align: Swift.String)
+  public func setVariableHeight(Height h: CoreGraphics.CGFloat)
+  public func setTitleText(_ text: Swift.String)
+  public func setSubtitleText(_ text: Swift.String)
+  public func setPlaceholder(_ text: Swift.String)
+  public func setInfo()
+  public func setHeightFromTitles()
+  public func toogleToolTip(_ help: Swift.String)
+  public func setMessage(_ string: Swift.String, _ state: DIGIPROSDK.enumErrorType)
+  public func initRules()
+  public func setMinMax()
+  public func setExpresionRegular()
+  public func setOcultarTitulo(_ bool: Swift.Bool)
+  public func setOcultarSubtitulo(_ bool: Swift.Bool)
+  public func setHabilitado(_ bool: Swift.Bool)
+  public func setEdited(v: Swift.String)
+  public func setEdited(v: Swift.String, isRobot: Swift.Bool)
+  public func setVisible(_ bool: Swift.Bool)
+  public func resetValidation()
+  public func setRequerido(_ bool: Swift.Bool)
+  public func updateIfIsValid(isDefault: Swift.Bool = false)
+  public func triggerEvent(_ action: Swift.String)
+  public func setRulesOnProperties()
+  public func triggerRulesOnProperties(_ action: Swift.String)
+  public func setRulesOnChange()
+  public func triggerRulesOnChange(_ action: Swift.String?)
+  public func setMathematics(_ bool: Swift.Bool, _ id: Swift.String)
+}
+@_inheritsConvenienceInitializers public class PaginaCell : Eureka.Cell<Swift.String>, Eureka.CellType {
+  public var formDelegate: DIGIPROSDK.FormularioDelegate?
+  public var rulesOnProperties: [(xml: DIGIPROSDK.AEXMLElement, vrb: Swift.String)]
+  public var rulesOnChange: [DIGIPROSDK.AEXMLElement]
+  public var atributos: DIGIPROSDK.Atributos_pagina?
+  public var elemento: DIGIPROSDK.Elemento
+  public func setObject(obj: DIGIPROSDK.Elemento)
+  override open func update()
+  @objc required dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  override open func setup()
+  @objc public func setAyuda(_ sender: Any)
+  override open func didSelect()
+  @objc deinit
+}
+extension PaginaCell : DIGIPROSDK.ObjectFormDelegate {
+  public func setEstadistica()
+  public func setTextStyle(_ style: Swift.String)
+  public func setDecoration(_ decor: Swift.String)
+  public func setAlignment(_ align: Swift.String)
+  public func setVariableHeight(Height h: CoreGraphics.CGFloat)
+  public func setTitleText(_ text: Swift.String)
+  public func setSubtitleText(_ text: Swift.String)
+  public func setHeightFromTitles()
+  public func setPlaceholder(_ text: Swift.String)
+  public func setInfo()
+  public func toogleToolTip(_ help: Swift.String)
+  public func setMessage(_ string: Swift.String, _ state: DIGIPROSDK.enumErrorType)
+  public func initRules()
+  public func setMinMax()
+  public func setExpresionRegular()
+  public func setOcultarTitulo(_ bool: Swift.Bool)
+  public func setOcultarSubtitulo(_ bool: Swift.Bool)
+  public func setHabilitado(_ bool: Swift.Bool)
+  public func setEdited(v: Swift.String)
+  public func setEdited(v: Swift.String, isRobot: Swift.Bool)
+  public func setVisible(_ bool: Swift.Bool)
+  public func resetValidation()
+  public func setRequerido(_ bool: Swift.Bool)
+  public func updateIfIsValid(isDefault: Swift.Bool = false)
+  public func triggerEvent(_ action: Swift.String)
+  public func setRulesOnProperties()
+  public func triggerRulesOnProperties(_ action: Swift.String)
+  public func setRulesOnChange()
+  public func triggerRulesOnChange(_ action: Swift.String?)
+  public func setMathematics(_ bool: Swift.Bool, _ id: Swift.String)
+}
+extension PaginaCell : DIGIPROSDK.GetInfoRowDelegate {
+  public func getMessageText() -> Swift.String
+  public func getRowEnabled() -> Swift.Bool
+  public func getRequired() -> Swift.Bool
+  public func getTitleLabel() -> Swift.String
+  public func getSubtitleLabel() -> Swift.String
+}
+@_inheritsConvenienceInitializers public class _LogoRow : Eureka.Row<DIGIPROSDKSO.LogoCell>, Eureka.KeyboardReturnHandler {
+  open var keyboardReturnType: Eureka.KeyboardReturnTypeConfiguration?
+  required public init(tag: Swift.String?)
+  override public func updateCell()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers final public class LogoRow : DIGIPROSDKSO._LogoRow, Eureka.RowType {
+  @objc deinit
+  required public init(tag: Swift.String?)
+}
+@_inheritsConvenienceInitializers public class EspacioCell : Eureka.Cell<Swift.String>, Eureka.CellType {
+  public var formDelegate: DIGIPROSDK.FormularioDelegate?
+  public var rulesOnProperties: [(xml: DIGIPROSDK.AEXMLElement, vrb: Swift.String)]
+  public var rulesOnChange: [DIGIPROSDK.AEXMLElement]
+  public var atributos: DIGIPROSDK.Atributos_espacio?
+  public var elemento: DIGIPROSDK.Elemento
+  public func setObject(obj: DIGIPROSDK.Elemento)
+  override open func update()
+  @objc required dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  override open func setup()
+  @objc public func setAyuda(_ sender: Any)
+  override open func didSelect()
+  @objc deinit
+}
+extension EspacioCell : DIGIPROSDK.ObjectFormDelegate {
+  public func setEstadistica()
+  public func setTextStyle(_ style: Swift.String)
+  public func setDecoration(_ decor: Swift.String)
+  public func setAlignment(_ align: Swift.String)
+  public func setVariableHeight(Height h: CoreGraphics.CGFloat)
+  public func setTitleText(_ text: Swift.String)
+  public func setSubtitleText(_ text: Swift.String)
+  public func setHeightFromTitles()
+  public func setPlaceholder(_ text: Swift.String)
+  public func setInfo()
+  public func toogleToolTip(_ help: Swift.String)
+  public func setMessage(_ string: Swift.String, _ state: DIGIPROSDK.enumErrorType)
+  public func initRules()
+  public func setMinMax()
+  public func setExpresionRegular()
+  public func setOcultarTitulo(_ bool: Swift.Bool)
+  public func setOcultarSubtitulo(_ bool: Swift.Bool)
+  public func setHabilitado(_ bool: Swift.Bool)
+  public func setEdited(v: Swift.String)
+  public func setEdited(v: Swift.String, isRobot: Swift.Bool)
+  public func setVisible(_ bool: Swift.Bool)
+  public func resetValidation()
+  public func setRequerido(_ bool: Swift.Bool)
+  public func updateIfIsValid(isDefault: Swift.Bool = false)
+  public func triggerEvent(_ action: Swift.String)
+  public func setRulesOnProperties()
+  public func setRulesOnChange()
+  public func triggerRulesOnProperties(_ action: Swift.String)
+  public func triggerRulesOnChange(_ action: Swift.String?)
+  public func setMathematics(_ bool: Swift.Bool, _ id: Swift.String)
+}
+extension EspacioCell : DIGIPROSDK.GetInfoRowDelegate {
+  public func getMessageText() -> Swift.String
+  public func getRowEnabled() -> Swift.Bool
+  public func getRequired() -> Swift.Bool
+  public func getTitleLabel() -> Swift.String
+  public func getSubtitleLabel() -> Swift.String
+}
+@_inheritsConvenienceInitializers open class _ListaTemporalRowOf<T> : Eureka.Row<DIGIPROSDKSO.ListaTemporalCell> where T : Swift.Equatable {
+  open var presentationMode: Eureka.PresentationMode<UIKit.UIViewController>?
+  open var onPresentCallback: ((Eureka.FormViewController, Eureka.SelectorViewController<Eureka.SelectorRow<DIGIPROSDKSO._ListaTemporalRowOf<T>.Cell>>) -> Swift.Void)?
+  open var customController: DIGIPROSDKSO.ListaTemporalViewController?
+  required public init(tag: Swift.String?)
+  override open func customDidSelect()
+  override open func customUpdateCell()
+  override open func prepare(for segue: UIKit.UIStoryboardSegue)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers final public class ListaTemporalRow : DIGIPROSDKSO._ListaTemporalRowOf<Swift.String>, Eureka.RowType {
+  @objc deinit
+  required public init(tag: Swift.String?)
+}
+@_inheritsConvenienceInitializers open class _MarcadoDocumentoRowOf<T> : Eureka.Row<DIGIPROSDKSO.MarcadoDocumentoCell> where T : Swift.Equatable {
+  open var presentationMode: Eureka.PresentationMode<UIKit.UIViewController>?
+  open var onPresentCallback: ((Eureka.FormViewController, Eureka.SelectorViewController<Eureka.SelectorRow<DIGIPROSDKSO._MarcadoDocumentoRowOf<T>.Cell>>) -> Swift.Void)?
+  open var customController: DIGIPROSDKSO.MarcadoDocumentoViewController?
+  required public init(tag: Swift.String?)
+  override open func customDidSelect()
+  override open func customUpdateCell()
+  override open func prepare(for segue: UIKit.UIStoryboardSegue)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers final public class MarcadoDocumentoRow : DIGIPROSDKSO._MarcadoDocumentoRowOf<Swift.String>, Eureka.RowType {
+  @objc deinit
+  required public init(tag: Swift.String?)
+}
+@_inheritsConvenienceInitializers public class SliderNewCell : Eureka.Cell<Swift.String>, Eureka.CellType, UIKit.UITextViewDelegate {
+  public var formDelegate: DIGIPROSDK.FormularioDelegate?
+  public var rulesOnProperties: [(xml: DIGIPROSDK.AEXMLElement, vrb: Swift.String)]
+  public var rulesOnChange: [DIGIPROSDK.AEXMLElement]
+  public var elemento: DIGIPROSDK.Elemento
+  public var atributos: DIGIPROSDK.Atributos_Slider?
+  public var genericRow: DIGIPROSDKSO.SliderNewRow! {
+    get
+  }
+  public var isInfoToolTipVisible: Swift.Bool
+  public var toolTip: DIGIPROSDK.EasyTipView?
+  public var valueSlider: Swift.String
+  public var est: DIGIPROSDK.FEEstadistica?
+  public func setObject(obj: DIGIPROSDK.Elemento)
+  override open func update()
+  @objc required dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  override open func setup()
+  @objc public func setAyuda(_ sender: Any)
+  override open func didSelect()
+  @objc public func cleanAction(_ sender: UIKit.UIButton)
+  @objc deinit
+}
+extension SliderNewCell : DIGIPROSDK.ObjectFormDelegate {
+  public func setEstadistica()
+  public func setTextStyle(_ style: Swift.String)
+  public func setDecoration(_ decor: Swift.String)
+  public func setAlignment(_ align: Swift.String)
+  public func setVariableHeight(Height h: CoreGraphics.CGFloat)
+  public func setTitleText(_ text: Swift.String)
+  public func setSubtitleText(_ text: Swift.String)
+  public func setHeightFromTitles()
+  public func setPlaceholder(_ text: Swift.String)
+  public func setInfo()
+  public func setPrefijoPosfijo()
+  public func setEstilo()
+  public func toogleToolTip(_ help: Swift.String)
+  public func setMessage(_ string: Swift.String, _ state: DIGIPROSDK.enumErrorType)
+  public func initRules()
+  public func setMinMax()
+  public func setExpresionRegular()
+  public func setOcultarTitulo(_ bool: Swift.Bool)
+  public func setOcultarSubtitulo(_ bool: Swift.Bool)
+  public func setHabilitado(_ bool: Swift.Bool)
+  public func setEdited(v: Swift.String)
+  public func setEdited(v: Swift.String, isRobot: Swift.Bool)
+  public func setVisible(_ bool: Swift.Bool)
+  public func resetValidation()
+  public func setRequerido(_ bool: Swift.Bool)
+  public func updateIfIsValid(isDefault: Swift.Bool = false)
+  public func triggerEvent(_ action: Swift.String)
+  public func setRulesOnProperties()
+  public func triggerRulesOnProperties(_ action: Swift.String)
+  public func setRulesOnChange()
+  public func triggerRulesOnChange(_ action: Swift.String?)
+  public func setMathematics(_ bool: Swift.Bool, _ id: Swift.String)
+}
+extension SliderNewCell {
+  public func getMessageText() -> Swift.String
+  public func getRowEnabled() -> Swift.Bool
+  public func getRequired() -> Swift.Bool
+  public func getTitleLabel() -> Swift.String
+  public func getSubtitleLabel() -> Swift.String
+}
+@_inheritsConvenienceInitializers public class _MonedaRow : Eureka.Row<DIGIPROSDKSO.MonedaCell>, Eureka.KeyboardReturnHandler {
+  open var keyboardReturnType: Eureka.KeyboardReturnTypeConfiguration?
+  required public init(tag: Swift.String?)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers final public class MonedaRow : DIGIPROSDKSO._MonedaRow, Eureka.RowType {
+  @objc deinit
+  required public init(tag: Swift.String?)
+}
+@_inheritsConvenienceInitializers public class MonedaCell : Eureka.Cell<Swift.String>, Eureka.CellType, UIKit.UITextFieldDelegate {
+  public var formDelegate: DIGIPROSDK.FormularioDelegate?
+  public var rulesOnProperties: [(xml: DIGIPROSDK.AEXMLElement, vrb: Swift.String)]
+  public var rulesOnChange: [DIGIPROSDK.AEXMLElement]
+  public var atributos: DIGIPROSDK.Atributos_moneda?
+  public var elemento: DIGIPROSDK.Elemento
+  public var genericRow: DIGIPROSDKSO.MonedaRow! {
+    get
+  }
+  public var isInfoToolTipVisible: Swift.Bool
+  public var toolTip: DIGIPROSDK.EasyTipView?
+  public var est: DIGIPROSDK.FEEstadistica?
+  public func setObject(obj: DIGIPROSDK.Elemento)
+  override open func update()
+  @objc required dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  override open func setup()
+  @objc public func setAyuda(_ sender: Any)
+  override open func didSelect()
+  @objc open func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
+  @objc open func textFieldDidEndEditing(_ textField: UIKit.UITextField)
+  @objc open func textFieldShouldReturn(_ textField: UIKit.UITextField) -> Swift.Bool
+  @objc open func textField(_ textField: UIKit.UITextField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
+  @objc open func textFieldShouldBeginEditing(_ textField: UIKit.UITextField) -> Swift.Bool
+  @objc open func textFieldShouldClear(_ textField: UIKit.UITextField) -> Swift.Bool
+  @objc open func textFieldShouldEndEditing(_ textField: UIKit.UITextField) -> Swift.Bool
+  @objc open func textFieldDidChange(_ textField: UIKit.UITextField)
+  override open func cellCanBecomeFirstResponder() -> Swift.Bool
+  override open func cellBecomeFirstResponder(withDirection: Eureka.Direction) -> Swift.Bool
+  override open func cellResignFirstResponder() -> Swift.Bool
+  @objc deinit
+}
+extension MonedaCell : DIGIPROSDK.ObjectFormDelegate {
+  public func setEstadistica()
+  public func setTextStyle(_ style: Swift.String)
+  public func setDecoration(_ decor: Swift.String)
+  public func setAlignment(_ align: Swift.String)
+  public func setVariableHeight(Height h: CoreGraphics.CGFloat)
+  public func setTitleText(_ text: Swift.String)
+  public func setSubtitleText(_ text: Swift.String)
+  public func setHeightFromTitles()
+  public func setPlaceholder(_ text: Swift.String)
+  public func setInfo()
+  public func setCultura()
+  public func toogleToolTip(_ help: Swift.String)
+  public func setMessage(_ string: Swift.String, _ state: DIGIPROSDK.enumErrorType)
+  public func initRules()
+  public func setMinMax()
+  public func setExpresionRegular()
+  public func setOcultarTitulo(_ bool: Swift.Bool)
+  public func setOcultarSubtitulo(_ bool: Swift.Bool)
+  public func setHabilitado(_ bool: Swift.Bool)
+  public func setEdited(v: Swift.String)
+  public func setEdited(v: Swift.String, isRobot: Swift.Bool)
+  public func setVisible(_ bool: Swift.Bool)
+  public func resetValidation()
+  public func setRequerido(_ bool: Swift.Bool)
+  public func updateIfIsValid(isDefault: Swift.Bool = false)
+  public func triggerEvent(_ action: Swift.String)
+  public func setRulesOnProperties()
+  public func triggerRulesOnProperties(_ action: Swift.String)
+  public func setRulesOnChange()
+  public func triggerRulesOnChange(_ action: Swift.String?)
+  public func setMathematics(_ bool: Swift.Bool, _ id: Swift.String)
+}
+extension MonedaCell {
+  public func getMessageText() -> Swift.String
+  public func getRowEnabled() -> Swift.Bool
+  public func getRequired() -> Swift.Bool
+  public func getTitleLabel() -> Swift.String
+  public func getSubtitleLabel() -> Swift.String
+}
+@_inheritsConvenienceInitializers public class _PaginaRow : Eureka.Row<DIGIPROSDKSO.PaginaCell>, Eureka.KeyboardReturnHandler {
+  open var keyboardReturnType: Eureka.KeyboardReturnTypeConfiguration?
+  required public init(tag: Swift.String?)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers final public class PaginaRow : DIGIPROSDKSO._PaginaRow, Eureka.RowType {
+  @objc deinit
+  required public init(tag: Swift.String?)
+}
+@_inheritsConvenienceInitializers public class jsonTemp : DIGIPROSDK.EVObject {
+  @objc deinit
+  @objc required dynamic public init()
+}
+@_inheritsConvenienceInitializers public class ListaTemporalCell : Eureka.Cell<Swift.String>, Eureka.CellType {
+  public var formDelegate: DIGIPROSDK.FormularioDelegate?
+  public var rulesOnProperties: [(xml: DIGIPROSDK.AEXMLElement, vrb: Swift.String)]
+  public var rulesOnChange: [DIGIPROSDK.AEXMLElement]
+  public var rulesOnAction: [DIGIPROSDK.AEXMLElement]
+  public var elemento: DIGIPROSDK.Elemento
+  public var atributos: DIGIPROSDK.Atributos_listatemporal?
+  public var genericRow: DIGIPROSDKSO.ListaTemporalRow! {
+    get
+  }
+  public var isInfoToolTipVisible: Swift.Bool
+  public var toolTip: DIGIPROSDK.EasyTipView?
+  public var est: DIGIPROSDK.FEEstadistica?
+  public var catalogoDestino: Foundation.NSMutableDictionary
+  public func setObject(obj: DIGIPROSDK.Elemento)
+  public func setElements(_ v: Swift.String)
+  override open func update()
+  public func getCatalogoObjectToJson(data: [DIGIPROSDKSO.jsonTemp])
+  public func getCatalogoJson(data: [Swift.String])
+  @objc required dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  override open func setup()
+  @objc public func setAyuda(_ sender: Any)
+  override open func didSelect()
+  @objc deinit
+}
+extension ListaTemporalCell : DIGIPROSDK.ObjectFormDelegate {
+  public func setEdited(v: Swift.String)
+  public func setEdited(v: Swift.String, isRobot: Swift.Bool)
+  open func setEstadistica()
+  public func setTextStyle(_ style: Swift.String)
+  public func setDecoration(_ decor: Swift.String)
+  public func setAlignment(_ align: Swift.String)
+  public func setVariableHeight(Height h: CoreGraphics.CGFloat)
+  public func setTitleText(_ text: Swift.String)
+  public func setSubtitleText(_ text: Swift.String)
+  public func setHeightFromTitles()
+  public func setPlaceholder(_ text: Swift.String)
+  public func setInfo()
+  public func toogleToolTip(_ help: Swift.String)
+  public func setMessage(_ string: Swift.String, _ state: DIGIPROSDK.enumErrorType)
+  public func initRules()
+  public func setMinMax()
+  public func setExpresionRegular()
+  public func setOcultarTitulo(_ bool: Swift.Bool)
+  public func setOcultarSubtitulo(_ bool: Swift.Bool)
+  public func setHabilitado(_ bool: Swift.Bool)
+  public func setEdited(v: Swift.String, value: Swift.String? = nil)
+  public func setVisible(_ bool: Swift.Bool)
+  public func resetValidation()
+  public func setRequerido(_ bool: Swift.Bool)
+  public func updateIfIsValid(isDefault: Swift.Bool = false)
+  public func triggerEvent(_ action: Swift.String)
+  public func setRulesOnProperties()
+  public func triggerRulesOnProperties(_ action: Swift.String)
+  public func setRulesOnChange()
+  public func triggerRulesOnChange(_ action: Swift.String?)
+  public func triggerRulesOnAction(_ action: Swift.String?)
+  public func setMathematics(_ bool: Swift.Bool, _ id: Swift.String)
+}
+extension ListaTemporalCell {
+  public func getMessageText() -> Swift.String
+  public func getRowEnabled() -> Swift.Bool
+  public func getRequired() -> Swift.Bool
+  public func getTitleLabel() -> Swift.String
+  public func getSubtitleLabel() -> Swift.String
+}
+extension TablaCell : DIGIPROSDK.SpreadsheetViewDelegate, DIGIPROSDK.SpreadsheetViewDataSource {
+  public func spreadsheetView(_ spreadsheetView: DIGIPROSDK.SpreadsheetView, heightForRow column: Swift.Int) -> CoreGraphics.CGFloat
+  public func spreadsheetView(_ spreadsheetView: DIGIPROSDK.SpreadsheetView, widthForColumn column: Swift.Int) -> CoreGraphics.CGFloat
+  public func numberOfColumns(in spreadsheetView: DIGIPROSDK.SpreadsheetView) -> Swift.Int
+  public func numberOfRows(in spreadsheetView: DIGIPROSDK.SpreadsheetView) -> Swift.Int
+  public func frozenColumns(in spreadsheetView: DIGIPROSDK.SpreadsheetView) -> Swift.Int
+  public func frozenRows(in spreadsheetView: DIGIPROSDK.SpreadsheetView) -> Swift.Int
+  public func mergedCells(in spreadsheetView: DIGIPROSDK.SpreadsheetView) -> [DIGIPROSDK.CellRange]
+  public func spreadsheetView(_ spreadsheetView: DIGIPROSDK.SpreadsheetView, cellForItemAt indexPath: Foundation.IndexPath) -> DIGIPROSDK.CellSpread?
+  public func spreadsheetView(_ spreadsheetView: DIGIPROSDK.SpreadsheetView, didSelectItemAt indexPath: Foundation.IndexPath)
+}
+@_inheritsConvenienceInitializers public class TextoCell : Eureka.Cell<Swift.String>, Eureka.CellType, UIKit.UITextFieldDelegate {
+  public var formDelegate: DIGIPROSDK.FormularioDelegate?
+  public var rulesOnProperties: [(xml: DIGIPROSDK.AEXMLElement, vrb: Swift.String)]
+  public var rulesOnChange: [DIGIPROSDK.AEXMLElement]
+  public var atributos: DIGIPROSDK.Atributos_texto?
+  public var atributosPassword: DIGIPROSDK.Atributos_password?
+  public var elemento: DIGIPROSDK.Elemento
+  public func setObject(obj: DIGIPROSDK.Elemento)
+  public func setObjectPassword(obj: DIGIPROSDK.Elemento)
+  override open func update()
+  @objc required dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  override open func setup()
+  @objc public func setAyuda(_ sender: Any)
+  override open func didSelect()
+  @objc open func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
+  @objc open func textFieldDidEndEditing(_ textField: UIKit.UITextField)
+  @objc open func textFieldShouldReturn(_ textField: UIKit.UITextField) -> Swift.Bool
+  @objc open func textField(_ textField: UIKit.UITextField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
+  @objc open func textFieldShouldBeginEditing(_ textField: UIKit.UITextField) -> Swift.Bool
+  @objc open func textFieldShouldClear(_ textField: UIKit.UITextField) -> Swift.Bool
+  @objc open func textFieldShouldEndEditing(_ textField: UIKit.UITextField) -> Swift.Bool
+  @objc open func textFieldDidChange(_ textField: UIKit.UITextField)
+  override open func cellCanBecomeFirstResponder() -> Swift.Bool
+  override open func cellBecomeFirstResponder(withDirection: Eureka.Direction) -> Swift.Bool
+  override open func cellResignFirstResponder() -> Swift.Bool
+  @objc deinit
+}
+extension TextoCell : DIGIPROSDK.ObjectFormDelegate {
+  public func setEstadistica()
+  public func setTextStyle(_ style: Swift.String)
+  public func setDecoration(_ decor: Swift.String)
+  public func setAlignment(_ align: Swift.String)
+  public func setVariableHeight(Height h: CoreGraphics.CGFloat)
+  public func setTitleText(_ text: Swift.String)
+  public func setSubtitleText(_ text: Swift.String)
+  public func setHeightFromTitles()
+  public func setPlaceholder(_ text: Swift.String)
+  public func setInfo()
+  public func toogleToolTip(_ help: Swift.String)
+  public func setMessage(_ string: Swift.String, _ state: DIGIPROSDK.enumErrorType)
+  public func initRules()
+  public func setMinMax()
+  public func setExpresionRegular()
+  public func setOcultarTitulo(_ bool: Swift.Bool)
+  public func setOcultarSubtitulo(_ bool: Swift.Bool)
+  public func setHabilitado(_ bool: Swift.Bool)
+  public func setEdited(v: Swift.String)
+  public func setEdited(v: Swift.String, isRobot: Swift.Bool)
+  public func setVisible(_ bool: Swift.Bool)
+  public func resetValidation()
+  public func setExactMask()
+  public func setRequerido(_ bool: Swift.Bool)
+  public func updateIfIsValid(isDefault: Swift.Bool = false)
+  public func triggerEvent(_ action: Swift.String)
+  public func setRulesOnProperties()
+  public func triggerRulesOnProperties(_ action: Swift.String)
+  public func setRulesOnChange()
+  public func triggerRulesOnChange(_ action: Swift.String?)
+  public func setMathematics(_ bool: Swift.Bool, _ id: Swift.String)
+}
+extension TextoCell : DIGIPROSDK.GetInfoRowDelegate {
+  public func getMessageText() -> Swift.String
+  public func getRowEnabled() -> Swift.Bool
+  public func getRequired() -> Swift.Bool
+  public func getTitleLabel() -> Swift.String
+  public func getSubtitleLabel() -> Swift.String
+}
+@_inheritsConvenienceInitializers public class PlantillaCell : Eureka.Cell<Swift.String>, Eureka.CellType {
+  public var formDelegate: DIGIPROSDK.FormularioDelegate?
+  public var rulesOnProperties: [(xml: DIGIPROSDK.AEXMLElement, vrb: Swift.String)]
+  public var rulesOnChange: [DIGIPROSDK.AEXMLElement]
+  public var atributos: DIGIPROSDK.Atributos_plantilla?
+  public var elemento: DIGIPROSDK.Elemento
+  public func setObject(obj: DIGIPROSDK.Elemento)
+  @objc public func setAyuda(_ sender: Any)
+  override open func update()
+  @objc required dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  override open func setup()
+  override open func didSelect()
+  @objc deinit
+}
+extension PlantillaCell : DIGIPROSDK.ObjectFormDelegate {
+  public func setEstadistica()
+  public func setTextStyle(_ style: Swift.String)
+  public func setDecoration(_ decor: Swift.String)
+  public func setAlignment(_ align: Swift.String)
+  public func setVariableHeight(Height h: CoreGraphics.CGFloat)
+  public func setTitleText(_ text: Swift.String)
+  public func setSubtitleText(_ text: Swift.String)
+  public func setHeightFromTitles()
+  public func setPlaceholder(_ text: Swift.String)
+  public func setInfo()
+  public func toogleToolTip(_ help: Swift.String)
+  public func setMessage(_ string: Swift.String, _ state: DIGIPROSDK.enumErrorType)
+  public func initRules()
+  public func setMinMax()
+  public func setExpresionRegular()
+  public func setOcultarTitulo(_ bool: Swift.Bool)
+  public func setOcultarSubtitulo(_ bool: Swift.Bool)
+  public func setHabilitado(_ bool: Swift.Bool)
+  public func setEdited(v: Swift.String)
+  public func setEdited(v: Swift.String, isRobot: Swift.Bool)
+  public func setVisible(_ bool: Swift.Bool)
+  public func resetValidation()
+  public func setRequerido(_ bool: Swift.Bool)
+  public func updateIfIsValid(isDefault: Swift.Bool = false)
+  public func triggerEvent(_ action: Swift.String)
+  public func setRulesOnProperties()
+  public func setRulesOnChange()
+  public func triggerRulesOnProperties(_ action: Swift.String)
+  public func triggerRulesOnChange(_ action: Swift.String?)
+  public func setMathematics(_ bool: Swift.Bool, _ id: Swift.String)
+}
+extension PlantillaCell : DIGIPROSDK.GetInfoRowDelegate {
+  public func getMessageText() -> Swift.String
+  public func getRowEnabled() -> Swift.Bool
+  public func getRequired() -> Swift.Bool
+  public func getTitleLabel() -> Swift.String
+  public func getSubtitleLabel() -> Swift.String
+}
+@_inheritsConvenienceInitializers public class _BotonRow : Eureka.Row<DIGIPROSDKSO.BotonCell> {
+  required public init(tag: Swift.String?)
+  override public func customDidSelect()
+  override public func customUpdateCell()
+  override public func prepare(for segue: UIKit.UIStoryboardSegue)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers final public class BotonRow : DIGIPROSDKSO._BotonRow, Eureka.RowType {
+  required public init(tag: Swift.String?)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers open class FechaCell : Eureka.Cell<Foundation.Date>, Eureka.CellType, UIKit.UITextFieldDelegate {
+  public var formDelegate: DIGIPROSDK.FormularioDelegate?
+  public var rulesOnProperties: [(xml: DIGIPROSDK.AEXMLElement, vrb: Swift.String)]
+  public var rulesOnChange: [DIGIPROSDK.AEXMLElement]
+  public var elemento: DIGIPROSDK.Elemento
+  public var atributos: DIGIPROSDK.Atributos_fecha?
+  public var atributosHora: DIGIPROSDK.Atributos_hora?
+  public var genericRow: DIGIPROSDKSO.FechaRow! {
+    get
+  }
+  public var isInfoToolTipVisible: Swift.Bool
+  public var toolTip: DIGIPROSDK.EasyTipView?
+  public var datePicker: UIKit.UIDatePicker
+  public var formato: Swift.String
+  final public let formatter: Foundation.DateFormatter
+  public var est: DIGIPROSDK.FEEstadistica?
+  public func setObject(obj: DIGIPROSDK.Elemento)
+  public func setObjectHora(obj: DIGIPROSDK.Elemento)
+  override open func update()
+  @objc required dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+  override open func setup()
+  @objc public func setAyuda(_ sender: Any)
+  override open func didSelect()
+  @objc open func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
+  @objc open func textFieldDidEndEditing(_ textField: UIKit.UITextField)
+  @objc open func textFieldShouldReturn(_ textField: UIKit.UITextField) -> Swift.Bool
+  @objc open func textField(_ textField: UIKit.UITextField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
+  @objc open func textFieldShouldBeginEditing(_ textField: UIKit.UITextField) -> Swift.Bool
+  @objc open func textFieldShouldClear(_ textField: UIKit.UITextField) -> Swift.Bool
+  @objc open func textFieldShouldEndEditing(_ textField: UIKit.UITextField) -> Swift.Bool
+  @objc open func textFieldDidChange(_ textField: UIKit.UITextField)
+  override open func cellCanBecomeFirstResponder() -> Swift.Bool
+  @objc override dynamic open var canBecomeFirstResponder: Swift.Bool {
+    @objc get
+  }
+  @objc override dynamic open var inputView: UIKit.UIView? {
+    @objc get
+  }
+}
+extension FechaCell : DIGIPROSDK.ObjectFormDelegate {
+  public func setEstadistica()
+  public func setTextStyle(_ style: Swift.String)
+  public func setDecoration(_ decor: Swift.String)
+  public func setAlignment(_ align: Swift.String)
+  public func setVariableHeight(Height h: CoreGraphics.CGFloat)
+  public func setTitleText(_ text: Swift.String)
+  public func setSubtitleText(_ text: Swift.String)
+  public func setHeightFromTitles()
+  public func setPlaceholder(_ text: Swift.String)
+  public func setInfo()
+  public func toogleToolTip(_ help: Swift.String)
+  public func setMessage(_ string: Swift.String, _ state: DIGIPROSDK.enumErrorType)
+  public func initRules()
+  public func setMinMax()
+  public func setExpresionRegular()
+  public func setOcultarTitulo(_ bool: Swift.Bool)
+  public func setOcultarSubtitulo(_ bool: Swift.Bool)
+  public func setHabilitado(_ bool: Swift.Bool)
+  public func setEdited(v: Swift.String, isRobot: Swift.Bool)
+  public func setEditedFecha(v: Swift.String, format: Swift.String)
+  public func setEditedHora(v: Swift.String)
+  public func setEdited(v: Swift.String)
+  public func setVisible(_ bool: Swift.Bool)
+  public func resetValidation()
+  public func setRequerido(_ bool: Swift.Bool)
+  public func updateIfIsValid(isDefault: Swift.Bool = false)
+  public func triggerEvent(_ action: Swift.String)
+  public func setRulesOnProperties()
+  public func triggerRulesOnProperties(_ action: Swift.String)
+  public func setRulesOnChange()
+  public func triggerRulesOnChange(_ action: Swift.String?)
+  public func setMathematics(_ bool: Swift.Bool, _ id: Swift.String)
+}
+extension FechaCell {
+  public func getMessageText() -> Swift.String
+  public func getRowEnabled() -> Swift.Bool
+  public func getRequired() -> Swift.Bool
+  public func getTitleLabel() -> Swift.String
+  public func getSubtitleLabel() -> Swift.String
+  public func getValueFecha() -> Swift.String
+  public func getValueHora() -> Swift.String
+}
+@_inheritsConvenienceInitializers public class EtiquetaCell : Eureka.Cell<Swift.String>, Eureka.CellType, WebKit.WKNavigationDelegate {
+  @objc @IBOutlet public var btnInfo: UIKit.UIButton!
+  public var formDelegate: DIGIPROSDK.FormularioDelegate?
+  public var rulesOnProperties: [(xml: DIGIPROSDK.AEXMLElement, vrb: Swift.String)]
+  public var rulesOnChange: [DIGIPROSDK.AEXMLElement]
+  public var atributos: DIGIPROSDK.Atributos_leyenda?
+  public var elemento: DIGIPROSDK.Elemento
+  public var genericRow: DIGIPROSDKSO.EtiquetaRow! {
+    get
+  }
+  public var isInfoToolTipVisible: Swift.Bool
+  public var toolTip: DIGIPROSDK.EasyTipView?
+  public var est: DIGIPROSDK.FEEstadistica?
+  public func setObject(obj: DIGIPROSDK.Elemento)
+  override open func update()
+  @objc required dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  override open func setup()
+  @objc public func setAyuda(_ sender: Any)
+  override open func didSelect()
+  @objc public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
+  public func webViewResizeToContent(webView: WebKit.WKWebView)
+  public func getValor() -> Swift.String
+  public func setValor(_ str: Swift.String)
+  public func setEncoded(_ bool: Swift.Bool)
+  @objc deinit
+}
+extension EtiquetaCell : DIGIPROSDK.ObjectFormDelegate {
+  public func setEstadistica()
+  public func setTextStyle(_ style: Swift.String)
+  public func setDecoration(_ decor: Swift.String)
+  public func setAlignment(_ align: Swift.String)
+  public func setVariableHeight(Height h: CoreGraphics.CGFloat)
+  public func setHeightFromTitles()
+  public func setTitleText(_ text: Swift.String)
+  public func setSubtitleText(_ text: Swift.String)
+  public func setPlaceholder(_ text: Swift.String)
+  public func setInfo()
+  public func toogleToolTip(_ help: Swift.String)
+  public func setMessage(_ string: Swift.String, _ state: DIGIPROSDK.enumErrorType)
+  public func initRules()
+  public func setMinMax()
+  public func setExpresionRegular()
+  public func setOcultarTitulo(_ bool: Swift.Bool)
+  public func setOcultarSubtitulo(_ bool: Swift.Bool)
+  public func setHabilitado(_ bool: Swift.Bool)
+  public func setEdited(v: Swift.String)
+  public func setEdited(v: Swift.String, isRobot: Swift.Bool)
+  public func setVisible(_ bool: Swift.Bool)
+  public func resetValidation()
+  public func setRequerido(_ bool: Swift.Bool)
+  public func updateIfIsValid(isDefault: Swift.Bool = false)
+  public func triggerEvent(_ action: Swift.String)
+  public func setRulesOnProperties()
+  public func triggerRulesOnProperties(_ action: Swift.String)
+  public func setRulesOnChange()
+  public func triggerRulesOnChange(_ action: Swift.String?)
+  public func setMathematics(_ bool: Swift.Bool, _ id: Swift.String)
+}
+extension EtiquetaCell {
+  public func getMessageText() -> Swift.String
+  public func getRowEnabled() -> Swift.Bool
+  public func getRequired() -> Swift.Bool
+  public func getTitleLabel() -> Swift.String
+  public func getSubtitleLabel() -> Swift.String
+}
+@objc @_inheritsConvenienceInitializers public class ComboDinamicoViewController : Eureka.FormViewController, Eureka.TypedRowControllerType, UIKit.UINavigationControllerDelegate, UIKit.UISearchBarDelegate {
+  public var row: Eureka.RowOf<Swift.String>!
+  public var onDismissCallback: ((UIKit.UIViewController) -> ())?
+  public var rowLista: DIGIPROSDKSO.ComboDinamicoRow?
+  public var atributos: DIGIPROSDK.Atributos_comboDinamico?
+  @objc @IBAction public func cerrarAction(_ sender: Any)
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewDidLayoutSubviews()
+  public func initForm(_ form: Eureka.Form)
+  @objc override dynamic public func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreGraphics.CGFloat
+  @objc override dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+  @objc public func searchBarSearchButtonClicked(_ searchBar: UIKit.UISearchBar)
+  @objc public func searchBar(_ searchBar: UIKit.UISearchBar, textDidChange searchText: Swift.String)
+  @objc deinit
+  override public init(style: UIKit.UITableView.Style)
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  public typealias RowValue = Swift.String
+}
+@objc @_inheritsConvenienceInitializers public class ListaViewController : Eureka.FormViewController, Eureka.TypedRowControllerType, UIKit.UINavigationControllerDelegate, UIKit.UISearchBarDelegate {
+  public var row: Eureka.RowOf<Swift.String>!
+  public var onDismissCallback: ((UIKit.UIViewController) -> ())?
+  public var atributos: DIGIPROSDK.Atributos_lista?
+  @objc @IBAction public func cerrarAction(_ sender: Any)
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewDidLayoutSubviews()
+  public func initForm(_ form: Eureka.Form)
+  @objc override dynamic public func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreGraphics.CGFloat
+  @objc override dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+  @objc public func searchBarSearchButtonClicked(_ searchBar: UIKit.UISearchBar)
+  @objc deinit
+  override public init(style: UIKit.UITableView.Style)
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  public typealias RowValue = Swift.String
+}
+@_inheritsConvenienceInitializers open class LogicoCell : Eureka.Cell<Swift.Bool>, Eureka.CellType {
+  public var formDelegate: DIGIPROSDK.FormularioDelegate?
+  public var rulesOnProperties: [(xml: DIGIPROSDK.AEXMLElement, vrb: Swift.String)]
+  public var rulesOnChange: [DIGIPROSDK.AEXMLElement]
+  public var elemento: DIGIPROSDK.Elemento
+  public var atributos: DIGIPROSDK.Atributos_logico?
+  public var genericRow: DIGIPROSDKSO.LogicoRow! {
+    get
+  }
+  public var isInfoToolTipVisible: Swift.Bool
+  public var toolTip: DIGIPROSDK.EasyTipView?
+  public var est: DIGIPROSDK.FEEstadistica?
+  public func setObject(obj: DIGIPROSDK.Elemento)
+  override open func update()
+  @objc required dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  override open func setup()
+  @objc public func setAyuda(_ sender: Any)
+  override open func didSelect()
+  @objc deinit
+  public func setImage(_ strImage: Swift.String)
+}
+extension LogicoCell : DIGIPROSDK.ObjectFormDelegate {
+  public func setEstadistica()
+  public func setTextStyle(_ style: Swift.String)
+  public func setDecoration(_ decor: Swift.String)
+  public func setAlignment(_ align: Swift.String)
+  public func setVariableHeight(Height h: CoreGraphics.CGFloat)
+  public func setTitleText(_ text: Swift.String)
+  public func setSubtitleText(_ text: Swift.String)
+  public func setHeightFromTitles()
+  public func setPlaceholder(_ text: Swift.String)
+  public func setInfo()
+  public func toogleToolTip(_ help: Swift.String)
+  public func setMessage(_ string: Swift.String, _ state: DIGIPROSDK.enumErrorType)
+  public func initRules()
+  public func setMinMax()
+  public func setExpresionRegular()
+  public func setOcultarTitulo(_ bool: Swift.Bool)
+  public func setOcultarSubtitulo(_ bool: Swift.Bool)
+  public func setHabilitado(_ bool: Swift.Bool)
+  public func setEdited(v: Swift.String)
+  public func setEdited(v: Swift.String, isRobot: Swift.Bool)
+  public func setVisible(_ bool: Swift.Bool)
+  public func resetValidation()
+  public func setRequerido(_ bool: Swift.Bool)
+  public func updateIfIsValid(isDefault: Swift.Bool = false)
+  public func triggerEvent(_ action: Swift.String)
+  public func setRulesOnProperties()
+  public func triggerRulesOnProperties(_ action: Swift.String)
+  public func setRulesOnChange()
+  public func triggerRulesOnChange(_ action: Swift.String?)
+  public func setMathematics(_ bool: Swift.Bool, _ id: Swift.String)
+}
+extension LogicoCell {
+  public func getMessageText() -> Swift.String
+  public func getRowEnabled() -> Swift.Bool
+  public func getRequired() -> Swift.Bool
+  public func getTitleLabel() -> Swift.String
+  public func getSubtitleLabel() -> Swift.String
+  public func getValueString() -> Swift.String
+}
