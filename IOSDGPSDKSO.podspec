@@ -1,14 +1,6 @@
-#
-# Be sure to run `pod lib lint IOSDGPSDKSO.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = 'IOSDGPSDKSO'
-  s.version          = '1.27.4.300'
+  s.version          = '1.27.4.301'
   s.summary          = 'IOS SDK DIGIPRO Formatos Electrónicos (Simple Object)'
   s.description      = <<-DESC
 El Simple object framework es utilizado para la generación de formatos electrónicos.
@@ -29,6 +21,6 @@ El Simple object framework es utilizado para la generación de formatos electró
 end
 
 # cd /Users/jonathanviloriam/Documents/Swift/Github/IOSDGPSDKSO
-# pod trunk push IOSDGPSDKSO.podspec --allow-warnings 
+# pod trunk push IOSDGPSDKSO.podspec --allow-warnings
 # pod trunk push IOSDGPSDKSO.podspec
 # pod update IOSDGPSDKSO
