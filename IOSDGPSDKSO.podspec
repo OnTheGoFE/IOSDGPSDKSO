@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'IOSDGPSDKSO'
-  s.version          = '1.27.4.202'
+  s.version          = '1.27.4.300'
   s.summary          = 'IOS SDK DIGIPRO Formatos Electrónicos (Simple Object)'
   s.description      = <<-DESC
 El Simple object framework es utilizado para la generación de formatos electrónicos.
@@ -28,7 +28,7 @@ El Simple object framework es utilizado para la generación de formatos electró
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 end
 
-# cd /Users/jonathanviloriam/Documents/Swift/Github/DIGIPROSDKSO
-# pod trunk push DIGIPROSDKSO.podspec --allow-warnings 
-# pod trunk push DIGIPROSDKSO.podspec
-# pod update DIGIPROSDKSO
+# cd /Users/jonathanviloriam/Documents/Swift/Github/IOSDGPSDKSO
+# pod trunk push IOSDGPSDKSO.podspec --allow-warnings 
+# pod trunk push IOSDGPSDKSO.podspec
+# pod update IOSDGPSDKSO
