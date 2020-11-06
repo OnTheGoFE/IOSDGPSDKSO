@@ -22,7 +22,7 @@ import WebKit
   public var rulesOnChange: [DIGIPROSDK.AEXMLElement]
   public var rulesOnAction: [DIGIPROSDK.AEXMLElement]
   public var datosCatalogo: DIGIPROSDK.FECatRemotoData?
-  public var filtroCombo: [Swift.String]
+  public var filtroCombo: [(id: Swift.String, row: Eureka.BaseRow)]
   public var valueOpen: Swift.Bool
   public var genericRow: DIGIPROSDKSO.ComboDinamicoRow! {
     get
@@ -1399,7 +1399,7 @@ extension TablaCell : DIGIPROSDK.SpreadsheetViewDelegate, DIGIPROSDK.Spreadsheet
   public var formDelegate: DIGIPROSDK.FormularioDelegate?
   public var rulesOnProperties: [(xml: DIGIPROSDK.AEXMLElement, vrb: Swift.String)]
   public var rulesOnChange: [DIGIPROSDK.AEXMLElement]
-  public var filtroCombo: [Swift.String]
+  public var filtroCombo: [(id: Swift.String, row: Eureka.BaseRow)]
   public var atributos: DIGIPROSDK.Atributos_texto?
   public var atributosPassword: DIGIPROSDK.Atributos_password?
   public var elemento: DIGIPROSDK.Elemento
