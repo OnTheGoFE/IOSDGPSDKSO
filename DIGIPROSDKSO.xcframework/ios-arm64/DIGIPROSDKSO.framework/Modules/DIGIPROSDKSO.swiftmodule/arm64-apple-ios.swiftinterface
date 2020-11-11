@@ -22,6 +22,7 @@ import WebKit
   public var rulesOnChange: [DIGIPROSDK.AEXMLElement]
   public var rulesOnAction: [DIGIPROSDK.AEXMLElement]
   public var datosCatalogo: DIGIPROSDK.FECatRemotoData?
+  public var catRemoto: DIGIPROSDK.FECatRemoto
   public var filtroCombo: [(id: Swift.String, row: Eureka.BaseRow)]
   public var valueOpen: Swift.Bool
   public var genericRow: DIGIPROSDKSO.ComboDinamicoRow! {
@@ -340,7 +341,7 @@ extension ListaCell {
   public var lblSubtitle: UIKit.UILabel
   @objc deinit
 }
-@_inheritsConvenienceInitializers public class ListaTemporalViewController : Eureka.FormViewController, Eureka.TypedRowControllerType, UIKit.UINavigationControllerDelegate {
+@objc @_inheritsConvenienceInitializers public class ListaTemporalViewController : Eureka.FormViewController, Eureka.TypedRowControllerType, UIKit.UINavigationControllerDelegate {
   public var row: Eureka.RowOf<Swift.String>!
   public var rowList: DIGIPROSDKSO.ListaTemporalCell?
   public var onDismissCallback: ((UIKit.UIViewController) -> ())?
@@ -458,8 +459,9 @@ public protocol TablaPlantillaViewControllerDelegate {
   func didTapUpdate() -> Swift.Bool
   func settingMessages(_ mssg: Swift.String, _ type: Swift.String)
 }
-@_inheritsConvenienceInitializers public class TablaPlantillaViewController : Eureka.FormViewController {
+@objc @_inheritsConvenienceInitializers public class TablaPlantillaViewController : Eureka.FormViewController {
   public var row: DIGIPROSDKSO.TablaCell?
+  public var clearAdd: Swift.Bool
   public var elementsForValidate: [Swift.String]
   public var delegate: DIGIPROSDKSO.TablaPlantillaViewControllerDelegate!
   @objc override dynamic public func viewDidLoad()
@@ -467,6 +469,7 @@ public protocol TablaPlantillaViewControllerDelegate {
   @objc override dynamic public func didReceiveMemoryWarning()
   public func validationRowsForm(_ elements: [Eureka.BaseRow]?)
   public func validateRowFromForm(_ row: Eureka.BaseRow)
+  public func reviewRulesOnColumns(idColumn: Swift.String, value: Swift.String)
   @objc deinit
   override public init(style: UIKit.UITableView.Style)
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
@@ -1592,7 +1595,9 @@ extension FechaCell : DIGIPROSDK.ObjectFormDelegate {
   public func setHabilitado(_ bool: Swift.Bool)
   public func setEdited(v: Swift.String, isRobot: Swift.Bool)
   public func setEditedFecha(v: Swift.String, format: Swift.String)
+  public func asignarFecha(valueDate: Swift.String, typeformat: Swift.String) -> Swift.String
   public func setEditedHora(v: Swift.String)
+  public func asignarHora(valueHour: Swift.String) -> Swift.String
   public func setEdited(v: Swift.String)
   public func setVisible(_ bool: Swift.Bool)
   public func resetValidation()
@@ -1680,11 +1685,12 @@ extension EtiquetaCell {
   public func getTitleLabel() -> Swift.String
   public func getSubtitleLabel() -> Swift.String
 }
-@_inheritsConvenienceInitializers public class ComboDinamicoViewController : Eureka.FormViewController, Eureka.TypedRowControllerType, UIKit.UINavigationControllerDelegate, UIKit.UISearchBarDelegate {
+@objc @_inheritsConvenienceInitializers public class ComboDinamicoViewController : Eureka.FormViewController, Eureka.TypedRowControllerType, UIKit.UINavigationControllerDelegate, UIKit.UISearchBarDelegate {
   public var row: Eureka.RowOf<Swift.String>!
   public var onDismissCallback: ((UIKit.UIViewController) -> ())?
   public var rowLista: DIGIPROSDKSO.ComboDinamicoRow?
   public var atributos: DIGIPROSDK.Atributos_comboDinamico?
+  public var catRemoto: DIGIPROSDK.FECatRemoto
   @objc @IBAction public func cerrarAction(_ sender: Any)
   @objc override dynamic public func viewDidLoad()
   @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
@@ -1700,7 +1706,7 @@ extension EtiquetaCell {
   @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   public typealias RowValue = Swift.String
 }
-@_inheritsConvenienceInitializers public class ListaViewController : Eureka.FormViewController, Eureka.TypedRowControllerType, UIKit.UINavigationControllerDelegate, UIKit.UISearchBarDelegate {
+@objc @_inheritsConvenienceInitializers public class ListaViewController : Eureka.FormViewController, Eureka.TypedRowControllerType, UIKit.UINavigationControllerDelegate, UIKit.UISearchBarDelegate {
   public var row: Eureka.RowOf<Swift.String>!
   public var onDismissCallback: ((UIKit.UIViewController) -> ())?
   public var atributos: DIGIPROSDK.Atributos_lista?
