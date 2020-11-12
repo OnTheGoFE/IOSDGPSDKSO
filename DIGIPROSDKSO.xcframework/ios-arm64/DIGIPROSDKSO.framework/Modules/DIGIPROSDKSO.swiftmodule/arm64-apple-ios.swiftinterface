@@ -37,6 +37,7 @@ import WebKit
   public func reloadCheck(lista: [Swift.String])
   @objc @IBAction public func selectedButton(radioButton: DIGIPROSDK.DLRadioButton)
   public func queryValue(isRobot: Swift.Bool = false)
+  public func settingValuesSync() -> DIGIPROSDK.Promise<Swift.Bool>
   public func settingValuesCombo(isRobot: Swift.Bool = false)
   override open func update()
   @objc required dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
