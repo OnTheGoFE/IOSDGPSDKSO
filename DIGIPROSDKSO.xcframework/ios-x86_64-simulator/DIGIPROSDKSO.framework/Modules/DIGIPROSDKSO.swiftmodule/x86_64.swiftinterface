@@ -22,7 +22,6 @@ import WebKit
   public var rulesOnChange: [DIGIPROSDK.AEXMLElement]
   public var rulesOnAction: [DIGIPROSDK.AEXMLElement]
   public var datosCatalogo: DIGIPROSDK.FECatRemotoData?
-  public var catRemoto: DIGIPROSDK.FECatRemoto
   public var filtroCombo: [(id: Swift.String, row: Eureka.BaseRow)]
   public var valueOpen: Swift.Bool
   public var genericRow: DIGIPROSDKSO.ComboDinamicoRow! {
@@ -1690,7 +1689,6 @@ extension EtiquetaCell {
   public var onDismissCallback: ((UIKit.UIViewController) -> ())?
   public var rowLista: DIGIPROSDKSO.ComboDinamicoRow?
   public var atributos: DIGIPROSDK.Atributos_comboDinamico?
-  public var catRemoto: DIGIPROSDK.FECatRemoto
   @objc @IBAction public func cerrarAction(_ sender: Any)
   @objc override dynamic public func viewDidLoad()
   @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
