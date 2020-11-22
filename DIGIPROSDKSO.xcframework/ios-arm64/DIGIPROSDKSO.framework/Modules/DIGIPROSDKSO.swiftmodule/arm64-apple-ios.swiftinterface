@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
-// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name DIGIPROSDKSO
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Osize -module-name DIGIPROSDKSO
 import DIGIPROSDK
 @_exported import DIGIPROSDKSO
 import Eureka
@@ -1699,10 +1699,10 @@ extension EtiquetaCell {
   @objc override dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
   @objc public func searchBarSearchButtonClicked(_ searchBar: UIKit.UISearchBar)
   @objc public func searchBar(_ searchBar: UIKit.UISearchBar, textDidChange searchText: Swift.String)
-  @objc deinit
   override public init(style: UIKit.UITableView.Style)
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
   public typealias RowValue = Swift.String
 }
 @objc @_inheritsConvenienceInitializers public class ListaViewController : Eureka.FormViewController, Eureka.TypedRowControllerType, UIKit.UINavigationControllerDelegate, UIKit.UISearchBarDelegate {
@@ -1717,10 +1717,10 @@ extension EtiquetaCell {
   @objc override dynamic public func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreGraphics.CGFloat
   @objc override dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
   @objc public func searchBarSearchButtonClicked(_ searchBar: UIKit.UISearchBar)
-  @objc deinit
   override public init(style: UIKit.UITableView.Style)
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
   public typealias RowValue = Swift.String
 }
 @_inheritsConvenienceInitializers open class LogicoCell : Eureka.Cell<Swift.Bool>, Eureka.CellType {
