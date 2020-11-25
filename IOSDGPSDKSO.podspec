@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'IOSDGPSDKSO'
-  s.version          = '1.27.4.414'
+  s.version          = '1.27.4.416'
   s.summary          = 'IOS SDK DIGIPRO Formatos Electrónicos (Simple Object)'
   s.description      = <<-DESC
 El Simple object framework es utilizado para la generación de formatos electrónicos.
